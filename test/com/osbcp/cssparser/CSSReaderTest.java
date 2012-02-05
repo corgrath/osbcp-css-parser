@@ -116,22 +116,6 @@ public final class CSSReaderTest {
 
 	}
 
-	//	@Test
-	//	public void testMissingSemicolons() throws Exception {
-	//
-	//		List<Rule> rules = CSSParser.parse("alpha { width: 100px; text-decoration: underlined } gamma delta { }, epsilon { height: 100px width: 200px; } ");
-	//
-	//		Assert.assertEquals(3, rules.size());
-	//
-	//		Rule rule = rules.get(0);
-	//		Assert.assertEquals("table  td", rule.getSelectors().get(0).toString());
-	//		Assert.assertEquals("width", rule.getPropertyValues().get(0).getProperty());
-	//		Assert.assertEquals("100px", rule.getPropertyValues().get(0).getValue());
-	//		Assert.assertEquals("text-decoration", rule.getPropertyValues().get(1).getProperty());
-	//		Assert.assertEquals("underlined", rule.getPropertyValues().get(1).getValue());
-	//
-	//	}
-
 	@Test
 	public void testMultipleSelectors() throws Exception {
 
