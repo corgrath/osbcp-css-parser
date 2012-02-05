@@ -39,6 +39,6 @@ License
 ========================================
 
 OSBCP CSS Parser
-Copyright 2012 Christoffer Pettersson, christoffer@christoffer.me.
+Copyright 2012 Christoffer Pettersson, christoffer[at]christoffer.me.
 
 Licensed under the Apache License, Version 2.0

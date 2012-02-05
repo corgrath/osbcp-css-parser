@@ -48,9 +48,21 @@ public final class PropertyValue {
 		return toString().hashCode();
 	}
 
+	/**
+	 * Returns the property.
+	 * 
+	 * @return The property.
+	 */
+
 	public String getProperty() {
 		return property;
 	}
+
+	/**
+	 * Returns the value.
+	 * 
+	 * @return The value.
+	 */
 
 	public String getValue() {
 		return value;

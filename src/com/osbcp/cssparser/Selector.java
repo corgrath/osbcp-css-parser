@@ -10,6 +10,12 @@ public final class Selector {
 
 	private String name;
 
+	/**
+	 * Creates a new selector.
+	 * 
+	 * @param name Selector name.
+	 */
+
 	public Selector(final String name) {
 		this.name = name;
 	}
