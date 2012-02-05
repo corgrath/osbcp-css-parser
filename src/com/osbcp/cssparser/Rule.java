@@ -52,7 +52,7 @@ public final class Rule {
 		return out.toString();
 	}
 
-	public List<PropertyValue> getValues() {
+	public List<PropertyValue> getPropertyValues() {
 		return values;
 	}
 
