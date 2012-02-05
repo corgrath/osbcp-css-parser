@@ -17,9 +17,48 @@
 
 package com.osbcp.cssparser;
 
-public final class Chars {
+/**
+ * List of known characters.
+ * 
+ * @author <a href="mailto:christoffer@christoffer.me">Christoffer Pettersson</a>
+ */
 
-	public static final Character STAR = new Character('*');
-	public static final Character SLASH = new Character('/');
+final class Chars {
+
+	/**
+	 * The character '*'.
+	 */
+
+	static final Character STAR = '*';
+
+	/**
+	 * The character '/'.
+	 */
+	static final Character SLASH = '/';
+
+	/**
+	 * The character ','.
+	 */
+	static final Character COMMA = ',';
+
+	/**
+	 * The character '{'.
+	 */
+	static final Character BRACKET_BEG = '{';
+
+	/**
+	 * The character '}'.
+	 */
+	static final Character BRACKET_END = '}';
+
+	/**
+	 * The character ':'.
+	 */
+	static final Character COLON = ':';
+
+	/**
+	 * The character ';'.
+	 */
+	static final Character SEMI_COLON = ';';
 
 }

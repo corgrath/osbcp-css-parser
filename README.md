@@ -63,6 +63,9 @@ Test coverage
 
 Version 1.0
 
+![Code coverage](http://dl.dropbox.com/u/8183146/persistent/projects/java_osbcp_css_parser/code_coverage.png "Code coverage")
+
+
 Code is also checked with [PMD](http://pmd.sourceforge.net/) and [Checkstyle](http://checkstyle.sourceforge.net/).
 
 License

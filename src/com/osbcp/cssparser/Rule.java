@@ -20,7 +20,6 @@ package com.osbcp.cssparser;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Represents a CSS rule.
@@ -120,7 +119,7 @@ public final class Rule {
 	 * @param selectors A list of selectors that should be appended.
 	 */
 
-	public void addSelectors(final Set<Selector> selectors) {
+	public void addSelectors(final List<Selector> selectors) {
 		this.selectors.addAll(selectors);
 	}
 
@@ -192,6 +191,16 @@ public final class Rule {
 
 	public void addSelector(final Selector selector) {
 		selectors.add(selector);
+	}
+
+	/**
+	 * Removes a selector from the rule.
+	 * 
+	 * @param selector The selector that should be removed from the rule.
+	 */
+
+	public void removeSelector(final Selector selector) {
+		selectors.remove(selector);
 	}
 
 }

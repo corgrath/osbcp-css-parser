@@ -109,6 +109,13 @@ public final class CSSReaderTest {
 
 	}
 
+	@Test(expected = IncorrectFormatException.class)
+	public void testValueShouldEndWithSemiColon() throws Exception {
+
+		CSSParser.parse("alpha { width: 100px }");
+
+	}
+
 	//	@Test
 	//	public void testMissingSemicolons() throws Exception {
 	//

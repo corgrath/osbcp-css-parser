@@ -74,7 +74,7 @@ public final class CSSParser {
 	private String propertyName;
 	private String valueName;
 	private Map<String, String> map;
-	private State mode;
+	private State state;
 	private Character previousChar;
 	private State beforeCommentMode;
 
@@ -87,7 +87,7 @@ public final class CSSParser {
 		this.propertyName = "";
 		this.valueName = "";
 		this.map = new LinkedHashMap<String, String>();
-		this.mode = State.INSIDE_SELECTOR;
+		this.state = State.INSIDE_SELECTOR;
 		this.previousChar = null;
 		this.beforeCommentMode = null;
 		this.selectorNames = new ArrayList<String>();
@@ -106,11 +106,11 @@ public final class CSSParser {
 
 		// Special case if we find a comment
 		if (Chars.SLASH.equals(c) && Chars.STAR.equals(nextC)) {
-			beforeCommentMode = mode;
-			mode = State.INSIDE_COMMENT;
+			beforeCommentMode = state;
+			state = State.INSIDE_COMMENT;
 		}
 
-		switch (mode) {
+		switch (state) {
 
 			case INSIDE_SELECTOR: {
 				parseSelector(c);
@@ -127,9 +127,6 @@ public final class CSSParser {
 			case INSIDE_VALUE: {
 				parseValue(c);
 				break;
-			}
-			default: {
-				throw new Exception("Unknown mode '" + mode + "'.");
 			}
 
 		}
@@ -148,17 +145,17 @@ public final class CSSParser {
 
 	private void parseValue(final Character c) throws IncorrectFormatException {
 
-		if (c.equals(';')) {
+		if (Chars.SEMI_COLON.equals(c)) {
 
 			// Store it in the values map
 			map.put(propertyName.trim(), valueName.trim());
 			propertyName = "";
 			valueName = "";
 
-			mode = State.INSIDE_PROPERTY_NAME;
+			state = State.INSIDE_PROPERTY_NAME;
 			return;
 
-		} else if (c.equals('}')) {
+		} else if (Chars.BRACKET_END.equals(c)) {
 
 			throw new IncorrectFormatException("The value '" + valueName.trim() + "' for property '" + propertyName.trim() + "' in the selector '" + selectorName.trim() + "' should end with an ';', not with '}'.");
 
@@ -180,12 +177,12 @@ public final class CSSParser {
 
 	private void parsePropertyName(final List<Rule> rules, final Character c) {
 
-		if (c.equals(':')) {
+		if (Chars.COLON.equals(c)) {
 
-			mode = State.INSIDE_VALUE;
+			state = State.INSIDE_VALUE;
 			return;
 
-		} else if (c.equals('}')) {
+		} else if (Chars.BRACKET_END.equals(c)) {
 
 			Rule rule = new Rule();
 			rules.add(rule);
@@ -216,7 +213,7 @@ public final class CSSParser {
 
 			map.clear();
 
-			mode = State.INSIDE_SELECTOR;
+			state = State.INSIDE_SELECTOR;
 
 		} else {
 
@@ -237,7 +234,7 @@ public final class CSSParser {
 
 		if (Chars.STAR.equals(previousChar) && Chars.SLASH.equals(c)) {
 
-			mode = beforeCommentMode;
+			state = beforeCommentMode;
 			return;
 
 		}
@@ -253,12 +250,12 @@ public final class CSSParser {
 
 	private void parseSelector(final Character c) throws IncorrectFormatException {
 
-		if (c.equals('{')) {
+		if (Chars.BRACKET_BEG.equals(c)) {
 
-			mode = State.INSIDE_PROPERTY_NAME;
+			state = State.INSIDE_PROPERTY_NAME;
 			return;
 
-		} else if (new Character(',').equals(c)) {
+		} else if (Chars.COMMA.equals(c)) {
 
 			if (selectorName.trim().isEmpty()) {
 				throw new IncorrectFormatException("Found an ',' in a selector name without any actual name before it.");
