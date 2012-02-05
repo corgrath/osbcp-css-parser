@@ -7,11 +7,11 @@ A simple CSS Parser in Java.
 Code examples
 ========================================
 
-As direct String:
+As String directly:
 
-	List<Rule> rules = CSSParser.parse("div { width: 100px; -mozilla-opacity: 345; } /* a comment */ beta { height: 200px; display: blocked; } table td { }");
+	List<Rule> rules = CSSParser.parse("div { width: 100px; -mozilla-opacity: 345; }");
 	
-Or from a File (using [Apache Commons IO](http://commons.apache.org/io/)):
+Or from a file (using [Apache Commons IO](http://commons.apache.org/io/)):
 
 		String contents = IOUtils.toString(this.getClass().getResourceAsStream("stylesheet.css"));
 
@@ -25,7 +25,7 @@ To print it  all out:
 		
 	}
 	
-Or go into detail:
+Or go into details:
 
 	for (Rule rule : rules) {
 	
@@ -36,6 +36,8 @@ Or go into detail:
 		List<PropertyValue> propertyValues = rule.getPropertyValues();
 	
 	}
+	
+Please view the JavaDoc for more informaton.
 	
 	
 Download
@@ -49,11 +51,19 @@ JavaDoc
 
 To be added.
 
+Found bugs?
+========================================
+
+Please create an issue here:
+
+https://github.com/corgrath/osbcp-css-parser/issues
+
 Test coverage
 ========================================
 
 Version 1.0
 
+Code is also checked with [PMD](http://pmd.sourceforge.net/) and [Checkstyle](http://checkstyle.sourceforge.net/).
 
 License
 ========================================

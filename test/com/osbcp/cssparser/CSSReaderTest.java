@@ -40,8 +40,8 @@ public final class CSSReaderTest {
 		Rule rule = rules.get(0);
 
 		Assert.assertEquals("div", rule.getSelectors().get(0).toString());
-		Assert.assertEquals("width", rule.getValues().get(0).getProperty());
-		Assert.assertEquals("100px", rule.getValues().get(0).getValue());
+		Assert.assertEquals("width", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("100px", rule.getPropertyValues().get(0).getValue());
 
 	}
 
@@ -54,10 +54,10 @@ public final class CSSReaderTest {
 
 		Rule rule = rules.get(0);
 		Assert.assertEquals("table  td", rule.getSelectors().get(0).toString());
-		Assert.assertEquals("width", rule.getValues().get(0).getProperty());
-		Assert.assertEquals("100px", rule.getValues().get(0).getValue());
-		Assert.assertEquals("text-decoration", rule.getValues().get(1).getProperty());
-		Assert.assertEquals("underlined", rule.getValues().get(1).getValue());
+		Assert.assertEquals("width", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("100px", rule.getPropertyValues().get(0).getValue());
+		Assert.assertEquals("text-decoration", rule.getPropertyValues().get(1).getProperty());
+		Assert.assertEquals("underlined", rule.getPropertyValues().get(1).getValue());
 
 	}
 
@@ -68,17 +68,17 @@ public final class CSSReaderTest {
 
 		Rule rule = rules.get(0);
 		Assert.assertEquals("div", rule.getSelectors().get(0).toString());
-		Assert.assertEquals("width", rule.getValues().get(0).getProperty());
-		Assert.assertEquals("100px", rule.getValues().get(0).getValue());
-		Assert.assertEquals("-mozilla-opacity", rule.getValues().get(1).getProperty());
-		Assert.assertEquals("345", rule.getValues().get(1).getValue());
+		Assert.assertEquals("width", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("100px", rule.getPropertyValues().get(0).getValue());
+		Assert.assertEquals("-mozilla-opacity", rule.getPropertyValues().get(1).getProperty());
+		Assert.assertEquals("345", rule.getPropertyValues().get(1).getValue());
 
 		rule = rules.get(1);
 		Assert.assertEquals("beta", rule.getSelectors().get(0).toString());
-		Assert.assertEquals("height", rule.getValues().get(0).getProperty());
-		Assert.assertEquals("200px", rule.getValues().get(0).getValue());
-		Assert.assertEquals("display", rule.getValues().get(1).getProperty());
-		Assert.assertEquals("blocked", rule.getValues().get(1).getValue());
+		Assert.assertEquals("height", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("200px", rule.getPropertyValues().get(0).getValue());
+		Assert.assertEquals("display", rule.getPropertyValues().get(1).getProperty());
+		Assert.assertEquals("blocked", rule.getPropertyValues().get(1).getValue());
 
 		rule = rules.get(2);
 		Assert.assertEquals("table td", rule.getSelectors().get(0).toString());
