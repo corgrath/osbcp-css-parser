@@ -1,7 +1,7 @@
 OSBCP CSS Parser
 ========================================
 
-A simple CSS Parser in Java.
+A simple CSS parser in Java.
 
 
 Code examples
@@ -51,7 +51,7 @@ JavaDoc
 
 To be added.
 
-Found bugs?
+Reporting bugs
 ========================================
 
 Please create an issue here:

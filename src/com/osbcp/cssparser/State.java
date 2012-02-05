@@ -18,48 +18,31 @@
 package com.osbcp.cssparser;
 
 /**
- * Represents a CSS selector.
+ * Different states to aid the CSS parser.
  * 
  * @author <a href="mailto:christoffer@christoffer.me">Christoffer Pettersson</a>
  */
 
-public final class Selector {
-
-	private String name;
+enum State {
 
 	/**
-	 * Creates a new selector.
-	 * 
-	 * @param name Selector name.
+	 * Inside a selector
 	 */
+	INSIDE_SELECTOR,
 
-	public Selector(final String name) {
-		this.name = name;
-	}
+	/**
+	 * Inside a comment.
+	 */
+	INSIDE_COMMENT,
 
-	@Override
-	public String toString() {
-		return name;
-	}
+	/**
+	 * Inside a property value.
+	 */
+	INSIDE_PROPERTY_NAME,
 
-	@Override
-	public boolean equals(final Object object) {
-
-		if (object instanceof Selector) {
-
-			Selector target = (Selector) object;
-
-			return target.name.equalsIgnoreCase(name);
-
-		}
-
-		return false;
-
-	}
-
-	@Override
-	public int hashCode() {
-		return toString().hashCode();
-	}
+	/**
+	 * Inside value.
+	 */
+	INSIDE_VALUE;
 
 }

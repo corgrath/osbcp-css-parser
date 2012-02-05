@@ -1,3 +1,20 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ */
+
 package com.osbcp.cssparser;
 
 import java.util.List;
@@ -82,6 +99,69 @@ public final class CSSReaderTest {
 
 		rule = rules.get(2);
 		Assert.assertEquals("table td", rule.getSelectors().get(0).toString());
+
+	}
+
+	@Test(expected = IncorrectFormatException.class)
+	public void testCommaFirstAsSelector() throws Exception {
+
+		CSSParser.parse("alpha { width: 100px; } , beta { height: 200px; } ");
+
+	}
+
+	//	@Test
+	//	public void testMissingSemicolons() throws Exception {
+	//
+	//		List<Rule> rules = CSSParser.parse("alpha { width: 100px; text-decoration: underlined } gamma delta { }, epsilon { height: 100px width: 200px; } ");
+	//
+	//		Assert.assertEquals(3, rules.size());
+	//
+	//		Rule rule = rules.get(0);
+	//		Assert.assertEquals("table  td", rule.getSelectors().get(0).toString());
+	//		Assert.assertEquals("width", rule.getPropertyValues().get(0).getProperty());
+	//		Assert.assertEquals("100px", rule.getPropertyValues().get(0).getValue());
+	//		Assert.assertEquals("text-decoration", rule.getPropertyValues().get(1).getProperty());
+	//		Assert.assertEquals("underlined", rule.getPropertyValues().get(1).getValue());
+	//
+	//	}
+
+	@Test
+	public void testMultipleSelectors() throws Exception {
+
+		List<Rule> rules = CSSParser.parse("alpha, beta { width: 100px; text-decoration: underlined; } gamma delta { } epsilon, /* some comment */ zeta { height: 34px; } ");
+
+		Assert.assertEquals(3, rules.size());
+
+		/*
+		 * Rule 1
+		 */
+
+		Rule rule = rules.get(0);
+		Assert.assertEquals("alpha", rule.getSelectors().get(0).toString());
+		Assert.assertEquals("beta", rule.getSelectors().get(1).toString());
+
+		Assert.assertEquals("width", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("100px", rule.getPropertyValues().get(0).getValue());
+		Assert.assertEquals("text-decoration", rule.getPropertyValues().get(1).getProperty());
+		Assert.assertEquals("underlined", rule.getPropertyValues().get(1).getValue());
+
+		/*
+		 * Rule 2
+		 */
+
+		rule = rules.get(1);
+		Assert.assertEquals("gamma delta", rule.getSelectors().get(0).toString());
+
+		/*
+		 * Rule 3
+		 */
+
+		rule = rules.get(2);
+		Assert.assertEquals("epsilon", rule.getSelectors().get(0).toString());
+		Assert.assertEquals("zeta", rule.getSelectors().get(1).toString());
+
+		Assert.assertEquals("height", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("34px", rule.getPropertyValues().get(0).getValue());
 
 	}
 

@@ -1,3 +1,20 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ */
+
 package com.osbcp.cssparser;
 
 import java.util.ArrayList;
@@ -6,7 +23,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/**
+ * Main logic for the CSS parser.
+ * 
+ * @author <a href="mailto:christoffer@christoffer.me">Christoffer Pettersson</a>
+ */
+
 public final class CSSParser {
+
+	/**
+	 * Reads CSS as a String and returns back a list of Rules.
+	 * 
+	 * @param css A String representation of CSS.
+	 * @return A list of Rules
+	 * @throws Exception If any errors occur.
+	 */
 
 	public static List<Rule> parse(final String css) throws Exception {
 
@@ -38,36 +69,45 @@ public final class CSSParser {
 		return rules;
 	}
 
+	private List<String> selectorNames;
 	private String selectorName;
 	private String propertyName;
 	private String valueName;
 	private Map<String, String> map;
-	private Mode mode;
+	private State mode;
 	private Character previousChar;
-	private Mode beforeCommentMode;
+	private State beforeCommentMode;
 
-	CSSParser() {
+	/**
+	 * Creates a new parser.
+	 */
+
+	private CSSParser() {
 		this.selectorName = "";
 		this.propertyName = "";
 		this.valueName = "";
 		this.map = new LinkedHashMap<String, String>();
-		this.mode = Mode.INSIDE_SELECTOR;
+		this.mode = State.INSIDE_SELECTOR;
 		this.previousChar = null;
 		this.beforeCommentMode = null;
+		this.selectorNames = new ArrayList<String>();
 	}
 
-	public void parse(final List<Rule> rules, final Character c, final Character nextC) throws Exception {
+	/**
+	 * Main parse logic.
+	 * 
+	 * @param rules The list of rules.
+	 * @param c The current currency.
+	 * @param nextC The next currency (or null).
+	 * @throws Exception If any errors occurs.
+	 */
 
-		if (c.equals('/') && nextC.equals('*')) {
+	private void parse(final List<Rule> rules, final Character c, final Character nextC) throws Exception {
 
+		// Special case if we find a comment
+		if (Chars.SLASH.equals(c) && Chars.STAR.equals(nextC)) {
 			beforeCommentMode = mode;
-			mode = Mode.INSIDE_COMMENT;
-			//			return;
-
-			//		} else if (isChar(c, ' ') || isChar(c, '\n') || isChar(c, '\t') || isChar(c, '\r')) {
-
-			//			return;
-
+			mode = State.INSIDE_COMMENT;
 		}
 
 		switch (mode) {
@@ -94,11 +134,19 @@ public final class CSSParser {
 
 		}
 
+		// Save the previous character
 		previousChar = c;
 
 	}
 
-	private void parseValue(final Character c) {
+	/**
+	 * Parse a value.
+	 * 
+	 * @param c The current character.
+	 * @throws IncorrectFormatException If any errors occur.
+	 */
+
+	private void parseValue(final Character c) throws IncorrectFormatException {
 
 		if (c.equals(';')) {
 
@@ -107,8 +155,12 @@ public final class CSSParser {
 			propertyName = "";
 			valueName = "";
 
-			mode = Mode.INSIDE_PROPERTY_NAME;
+			mode = State.INSIDE_PROPERTY_NAME;
 			return;
+
+		} else if (c.equals('}')) {
+
+			throw new IncorrectFormatException("The value '" + valueName.trim() + "' for property '" + propertyName.trim() + "' in the selector '" + selectorName.trim() + "' should end with an ';', not with '}'.");
 
 		} else {
 
@@ -119,20 +171,38 @@ public final class CSSParser {
 
 	}
 
+	/**
+	 * Parse property name.
+	 * 
+	 * @param rules The list of rules.
+	 * @param c The current character.
+	 */
+
 	private void parsePropertyName(final List<Rule> rules, final Character c) {
 
 		if (c.equals(':')) {
 
-			mode = Mode.INSIDE_VALUE;
+			mode = State.INSIDE_VALUE;
 			return;
 
 		} else if (c.equals('}')) {
 
+			Rule rule = new Rule();
+			rules.add(rule);
+
+			/*
+			 * Huge logic to create a new rule
+			 */
+
+			for (String s : selectorNames) {
+				Selector selector = new Selector(s.trim());
+				rule.addSelector(selector);
+			}
+			selectorNames.clear();
+
 			Selector selector = new Selector(selectorName.trim());
 			selectorName = "";
-
-			Rule rule = new Rule(selector);
-			rules.add(rule);
+			rule.addSelector(selector);
 
 			for (Entry<String, String> entry : map.entrySet()) {
 
@@ -146,7 +216,7 @@ public final class CSSParser {
 
 			map.clear();
 
-			mode = Mode.INSIDE_SELECTOR;
+			mode = State.INSIDE_SELECTOR;
 
 		} else {
 
@@ -157,9 +227,15 @@ public final class CSSParser {
 
 	}
 
-	private void parseComment(final Character c) throws Exception {
+	/**
+	 * Parse a selector.
+	 * 
+	 * @param c The current character.
+	 */
 
-		if (previousChar == '*' && c == '/') {
+	private void parseComment(final Character c) {
+
+		if (Chars.STAR.equals(previousChar) && Chars.SLASH.equals(c)) {
 
 			mode = beforeCommentMode;
 			return;
@@ -168,12 +244,28 @@ public final class CSSParser {
 
 	}
 
-	private void parseSelector(final Character c) throws Exception {
+	/**
+	 * Parse a selector.
+	 * 
+	 * @param c The current character.
+	 * @throws IncorrectFormatException If an error occurs.
+	 */
+
+	private void parseSelector(final Character c) throws IncorrectFormatException {
 
 		if (c.equals('{')) {
 
-			mode = Mode.INSIDE_PROPERTY_NAME;
+			mode = State.INSIDE_PROPERTY_NAME;
 			return;
+
+		} else if (new Character(',').equals(c)) {
+
+			if (selectorName.trim().isEmpty()) {
+				throw new IncorrectFormatException("Found an ',' in a selector name without any actual name before it.");
+			}
+
+			selectorNames.add(selectorName.trim());
+			selectorName = "";
 
 		} else {
 
@@ -183,5 +275,4 @@ public final class CSSParser {
 		}
 
 	}
-
 }
