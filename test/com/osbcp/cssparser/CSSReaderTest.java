@@ -156,6 +156,13 @@ public final class CSSReaderTest {
 
 	}
 
+	@Test(expected = IncorrectFormatException.class)
+	public void testMissingColon() throws Exception {
+
+		CSSParser.parse("alpha { color red; }");
+
+	}
+
 	@Test
 	public void testFileBasic() throws Exception {
 

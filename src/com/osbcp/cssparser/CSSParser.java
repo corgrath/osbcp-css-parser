@@ -173,14 +173,19 @@ public final class CSSParser {
 	 * 
 	 * @param rules The list of rules.
 	 * @param c The current character.
+	 * @throws IncorrectFormatException If any error occurs
 	 */
 
-	private void parsePropertyName(final List<Rule> rules, final Character c) {
+	private void parsePropertyName(final List<Rule> rules, final Character c) throws IncorrectFormatException {
 
 		if (Chars.COLON.equals(c)) {
 
 			state = State.INSIDE_VALUE;
 			return;
+
+		} else if (Chars.SEMI_COLON.equals(c)) {
+
+			throw new IncorrectFormatException("Unexpected character ';' for property '" + propertyName.trim() + "' in the selector '" + selectorName.trim() + "' should end with an ';', not with '}'.");
 
 		} else if (Chars.BRACKET_END.equals(c)) {
 
