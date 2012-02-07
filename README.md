@@ -61,7 +61,7 @@ https://github.com/corgrath/osbcp-css-parser/issues
 Test coverage
 ========================================
 
-Version 1.0
+Version 1.2
 
 ![Code coverage](http://dl.dropbox.com/u/8183146/persistent/projects/java_osbcp_css_parser/code_coverage.png "Code coverage")
 
