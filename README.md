@@ -3,6 +3,8 @@ OSBCP CSS Parser
 
 A simple CSS parser in Java.
 
+An oh, it is also very strict. If it finds an unexpected character in your CSS it self-destructs, taking you with you - making it a great tool to validate CSS.
+
 
 Code examples
 ========================================
