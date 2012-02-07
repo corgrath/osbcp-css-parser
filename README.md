@@ -63,7 +63,7 @@ Test coverage
 
 Version 1.2
 
-![Code coverage](http://dl.dropbox.com/u/8183146/persistent/projects/java_osbcp_css_parser/code_coverage.png "Code coverage")
+![Code coverage](http://dl.dropbox.com/u/8183146/persistent/projects/java_osbcp_css_parser/code_coverage12.png "Code coverage")
 
 
 Code is also checked with [PMD](http://pmd.sourceforge.net/) and [Checkstyle](http://checkstyle.sourceforge.net/).
@@ -73,18 +73,18 @@ Changes
 ========================================
 v1.2 2012-06-07 Christoffer Pettersson
 
-	* Added IncorrectFormatException.ErrorCode for more specific exceptions
-	* Added support for values with data URIs
+* Added IncorrectFormatException.ErrorCode for more specific exceptions
+* Added support for values with data URIs
 
 
 v1.1 2012-02-06 Christoffer Pettersson
 
-	* While inside the INSIDE_PROPERTY_NAME and a colon : is read, a IncorrectFormatException is thrown 
+* While inside the INSIDE_PROPERTY_NAME and a colon : is read, a IncorrectFormatException is thrown 
 
 
 v1.0 2012-02-05 Christoffer Pettersson
  
- 	* Initial release
+* Initial release
 
 
 License
