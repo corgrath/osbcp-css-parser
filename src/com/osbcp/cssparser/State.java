@@ -43,6 +43,11 @@ enum State {
 	/**
 	 * Inside value.
 	 */
-	INSIDE_VALUE;
+	INSIDE_VALUE,
+
+	/**
+	 * Inside value and also inside (
+	 */
+	INSIDE_VALUE_ROUND_BRACKET;
 
 }

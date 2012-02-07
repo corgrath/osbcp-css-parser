@@ -27,14 +27,53 @@ public class IncorrectFormatException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
+	private ErrorCode errorCode;
+
 	/**
 	 * Creates a new IncorrectFormatExeption with an error message;
 	 * 
+	 * @param errorCode S unique error code associated with the error.
 	 * @param message Error message describing the problem.
 	 */
 
-	public IncorrectFormatException(final String message) {
+	IncorrectFormatException(final ErrorCode errorCode, final String message) {
 		super(message);
+		this.errorCode = errorCode;
+	}
+
+	/**
+	 * Returns a unique error code associated with the error.
+	 * 
+	 * @return A unique error code associated with the error.
+	 */
+
+	public ErrorCode getErrorCode() {
+		return errorCode;
+	}
+
+	/**
+	 * List of unique error codes.
+	 * 
+	 * @author <a href="mailto:christoffer@christoffer.me">Christoffer Pettersson</a>
+	 */
+
+	public enum ErrorCode {
+
+		/**
+		 * When the parse founds a semicolon ; when reading the property name.
+		 */
+		FOUND_SEMICOLON_WHEN_READING_PROPERTY_NAME,
+
+		/**
+		 * When the parse founds an end bracket } before the value's semicolon ; ending.
+		 */
+		FOUND_END_BRACKET_BEFORE_SEMICOLON,
+
+		/**
+		 * When the parse founds a colon , before reading a real selector name.
+		 */
+		FOUND_COLON_WHEN_READING_SELECTOR_NAME;
+
 	}
 
 }

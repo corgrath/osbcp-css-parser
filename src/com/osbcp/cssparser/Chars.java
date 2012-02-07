@@ -61,4 +61,14 @@ final class Chars {
 	 */
 	static final Character SEMI_COLON = ';';
 
+	/**
+	 * The character '('.
+	 */
+	static final Character ROUND_BRACKET_BEG = '(';
+
+	/**
+	 * The character ')'.
+	 */
+	static final Character ROUND_BRACKET_END = ')';
+
 }

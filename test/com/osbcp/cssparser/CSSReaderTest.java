@@ -24,6 +24,8 @@ import junit.framework.Assert;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
+import com.osbcp.cssparser.IncorrectFormatException.ErrorCode;
+
 public final class CSSReaderTest {
 
 	@Test
@@ -79,9 +81,35 @@ public final class CSSReaderTest {
 	}
 
 	@Test
+	public void testBase64() throws Exception {
+
+		List<Rule> rules = CSSParser.parse("image { background-image:url(data:image/gif;base64,ABC123/ABC123=ABC123);}");
+
+		Assert.assertEquals(1, rules.size());
+
+		Rule rule = rules.get(0);
+		Assert.assertEquals("image", rule.getSelectors().get(0).toString());
+
+		Assert.assertEquals("background-image", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("url(data:image/gif;base64,ABC123/ABC123=ABC123)", rule.getPropertyValues().get(0).getValue());
+
+	}
+
+	@Test
+	public void testEmptPropertyValues() throws Exception {
+
+		List<Rule> rules = CSSParser.parse("its-all-empty { /*empty*/ } empty { }");
+
+		Assert.assertEquals(0, rules.size());
+
+	}
+
+	@Test
 	public void testBasicMultipleValues() throws Exception {
 
-		List<Rule> rules = CSSParser.parse("div { width: 100px; -mozilla-opacity: 345; } /* a comment */ beta { height: 200px; display: blocked; } table td { }");
+		List<Rule> rules = CSSParser.parse("div { width: 100px; -mozilla-opacity: 345; } /* a comment */ beta{height:200px;display:blocked;}table td{}");
+
+		Assert.assertEquals(2, rules.size());
 
 		Rule rule = rules.get(0);
 		Assert.assertEquals("div", rule.getSelectors().get(0).toString());
@@ -97,22 +125,29 @@ public final class CSSReaderTest {
 		Assert.assertEquals("display", rule.getPropertyValues().get(1).getProperty());
 		Assert.assertEquals("blocked", rule.getPropertyValues().get(1).getValue());
 
-		rule = rules.get(2);
-		Assert.assertEquals("table td", rule.getSelectors().get(0).toString());
-
 	}
 
-	@Test(expected = IncorrectFormatException.class)
+	@Test
 	public void testCommaFirstAsSelector() throws Exception {
 
-		CSSParser.parse("alpha { width: 100px; } , beta { height: 200px; } ");
+		try {
+			CSSParser.parse("alpha { width: 100px; } , beta { height: 200px; } ");
+			Assert.fail();
+		} catch (IncorrectFormatException e) {
+			Assert.assertEquals(ErrorCode.FOUND_COLON_WHEN_READING_SELECTOR_NAME, e.getErrorCode());
+		}
 
 	}
 
-	@Test(expected = IncorrectFormatException.class)
+	@Test
 	public void testValueShouldEndWithSemiColon() throws Exception {
 
-		CSSParser.parse("alpha { width: 100px }");
+		try {
+			CSSParser.parse("alpha { width: 100px }");
+			Assert.fail();
+		} catch (IncorrectFormatException e) {
+			Assert.assertEquals(ErrorCode.FOUND_END_BRACKET_BEFORE_SEMICOLON, e.getErrorCode());
+		}
 
 	}
 
@@ -121,7 +156,7 @@ public final class CSSReaderTest {
 
 		List<Rule> rules = CSSParser.parse("alpha, beta { width: 100px; text-decoration: underlined; } gamma delta { } epsilon, /* some comment */ zeta { height: 34px; } ");
 
-		Assert.assertEquals(3, rules.size());
+		Assert.assertEquals(2, rules.size());
 
 		/*
 		 * Rule 1
@@ -140,14 +175,14 @@ public final class CSSReaderTest {
 		 * Rule 2
 		 */
 
-		rule = rules.get(1);
-		Assert.assertEquals("gamma delta", rule.getSelectors().get(0).toString());
+		//		rule = rules.get(1);
+		//		Assert.assertEquals("gamma delta", rule.getSelectors().get(0).toString());
 
 		/*
 		 * Rule 3
 		 */
 
-		rule = rules.get(2);
+		rule = rules.get(1);
 		Assert.assertEquals("epsilon", rule.getSelectors().get(0).toString());
 		Assert.assertEquals("zeta", rule.getSelectors().get(1).toString());
 
@@ -156,10 +191,15 @@ public final class CSSReaderTest {
 
 	}
 
-	@Test(expected = IncorrectFormatException.class)
+	@Test
 	public void testMissingColon() throws Exception {
 
-		CSSParser.parse("alpha { color red; }");
+		try {
+			CSSParser.parse("alpha { color red; }");
+			Assert.fail();
+		} catch (IncorrectFormatException e) {
+			Assert.assertEquals(ErrorCode.FOUND_SEMICOLON_WHEN_READING_PROPERTY_NAME, e.getErrorCode());
+		}
 
 	}
 

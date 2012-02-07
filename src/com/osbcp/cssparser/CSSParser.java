@@ -23,6 +23,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import com.osbcp.cssparser.IncorrectFormatException.ErrorCode;
+
 /**
  * Main logic for the CSS parser.
  * 
@@ -128,6 +130,10 @@ public final class CSSParser {
 				parseValue(c);
 				break;
 			}
+			case INSIDE_VALUE_ROUND_BRACKET: {
+				parseValueInsideRoundBrackets(c);
+				break;
+			}
 
 		}
 
@@ -145,6 +151,9 @@ public final class CSSParser {
 
 	private void parseValue(final Character c) throws IncorrectFormatException {
 
+		// Special case if the value is a data uri, the value can contain a ;
+		//		boolean valueHasDataURI = valueName.toLowerCase().indexOf("data:") != -1;
+
 		if (Chars.SEMI_COLON.equals(c)) {
 
 			// Store it in the values map
@@ -155,9 +164,40 @@ public final class CSSParser {
 			state = State.INSIDE_PROPERTY_NAME;
 			return;
 
+		} else if (Chars.ROUND_BRACKET_BEG.equals(c)) {
+
+			valueName += Chars.ROUND_BRACKET_BEG;
+
+			state = State.INSIDE_VALUE_ROUND_BRACKET;
+			return;
+
 		} else if (Chars.BRACKET_END.equals(c)) {
 
-			throw new IncorrectFormatException("The value '" + valueName.trim() + "' for property '" + propertyName.trim() + "' in the selector '" + selectorName.trim() + "' should end with an ';', not with '}'.");
+			throw new IncorrectFormatException(ErrorCode.FOUND_END_BRACKET_BEFORE_SEMICOLON, "The value '" + valueName.trim() + "' for property '" + propertyName.trim() + "' in the selector '" + selectorName.trim() + "' should end with an ';', not with '}'.");
+
+		} else {
+
+			valueName += c;
+			return;
+
+		}
+
+	}
+
+	/**
+	 * Parse value inside a round bracket (
+	 * 
+	 * @param c The current character.
+	 * @throws IncorrectFormatException If any error occurs.
+	 */
+
+	private void parseValueInsideRoundBrackets(final Character c) throws IncorrectFormatException {
+
+		if (Chars.ROUND_BRACKET_END.equals(c)) {
+
+			valueName += Chars.ROUND_BRACKET_END;
+			state = State.INSIDE_VALUE;
+			return;
 
 		} else {
 
@@ -185,12 +225,11 @@ public final class CSSParser {
 
 		} else if (Chars.SEMI_COLON.equals(c)) {
 
-			throw new IncorrectFormatException("Unexpected character ';' for property '" + propertyName.trim() + "' in the selector '" + selectorName.trim() + "' should end with an ';', not with '}'.");
+			throw new IncorrectFormatException(ErrorCode.FOUND_SEMICOLON_WHEN_READING_PROPERTY_NAME, "Unexpected character '" + c + "' for property '" + propertyName.trim() + "' in the selector '" + selectorName.trim() + "' should end with an ';', not with '}'.");
 
 		} else if (Chars.BRACKET_END.equals(c)) {
 
 			Rule rule = new Rule();
-			rules.add(rule);
 
 			/*
 			 * Huge logic to create a new rule
@@ -217,6 +256,10 @@ public final class CSSParser {
 			}
 
 			map.clear();
+
+			if (!rule.getPropertyValues().isEmpty()) {
+				rules.add(rule);
+			}
 
 			state = State.INSIDE_SELECTOR;
 
@@ -263,7 +306,7 @@ public final class CSSParser {
 		} else if (Chars.COMMA.equals(c)) {
 
 			if (selectorName.trim().isEmpty()) {
-				throw new IncorrectFormatException("Found an ',' in a selector name without any actual name before it.");
+				throw new IncorrectFormatException(ErrorCode.FOUND_COLON_WHEN_READING_SELECTOR_NAME, "Found an ',' in a selector name without any actual name before it.");
 			}
 
 			selectorNames.add(selectorName.trim());
@@ -277,4 +320,5 @@ public final class CSSParser {
 		}
 
 	}
+
 }
