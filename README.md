@@ -73,6 +73,12 @@ Code is also checked with [PMD](http://pmd.sourceforge.net/) and [Checkstyle](ht
 
 Changes
 ========================================
+
+v1.3 2012-02-08 Christoffer Pettersson
+
+* It is now possible to have duplicate property names in a rule
+
+
 v1.2 2012-06-07 Christoffer Pettersson
 
 * Added IncorrectFormatException.ErrorCode for more specific exceptions

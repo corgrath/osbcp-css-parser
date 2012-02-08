@@ -26,7 +26,7 @@ import org.junit.Test;
 
 import com.osbcp.cssparser.IncorrectFormatException.ErrorCode;
 
-public final class CSSReaderTest {
+public final class CSSParserTest {
 
 	@Test
 	public void testNull() throws Exception {
@@ -128,26 +128,24 @@ public final class CSSReaderTest {
 	}
 
 	@Test
-	public void testCommaFirstAsSelector() throws Exception {
+	public void testDuplicatePropertiesSameOrder() throws Exception {
 
-		try {
-			CSSParser.parse("alpha { width: 100px; } , beta { height: 200px; } ");
-			Assert.fail();
-		} catch (IncorrectFormatException e) {
-			Assert.assertEquals(ErrorCode.FOUND_COLON_WHEN_READING_SELECTOR_NAME, e.getErrorCode());
-		}
+		List<Rule> rules = CSSParser.parse("product-row { background: #ABC123; border: 1px black solid; border: none;background:   url(http://www.domain.com/image.jpg);}");
 
-	}
+		Rule rule = rules.get(0);
+		Assert.assertEquals("product-row", rule.getSelectors().get(0).toString());
 
-	@Test
-	public void testValueShouldEndWithSemiColon() throws Exception {
+		Assert.assertEquals("background", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("#ABC123", rule.getPropertyValues().get(0).getValue());
 
-		try {
-			CSSParser.parse("alpha { width: 100px }");
-			Assert.fail();
-		} catch (IncorrectFormatException e) {
-			Assert.assertEquals(ErrorCode.FOUND_END_BRACKET_BEFORE_SEMICOLON, e.getErrorCode());
-		}
+		Assert.assertEquals("border", rule.getPropertyValues().get(1).getProperty());
+		Assert.assertEquals("1px black solid", rule.getPropertyValues().get(1).getValue());
+
+		Assert.assertEquals("border", rule.getPropertyValues().get(2).getProperty());
+		Assert.assertEquals("none", rule.getPropertyValues().get(2).getValue());
+
+		Assert.assertEquals("background", rule.getPropertyValues().get(3).getProperty());
+		Assert.assertEquals("url(http://www.domain.com/image.jpg)", rule.getPropertyValues().get(3).getValue());
 
 	}
 

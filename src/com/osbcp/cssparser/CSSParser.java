@@ -18,10 +18,7 @@
 package com.osbcp.cssparser;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 
 import com.osbcp.cssparser.IncorrectFormatException.ErrorCode;
 
@@ -75,7 +72,8 @@ public final class CSSParser {
 	private String selectorName;
 	private String propertyName;
 	private String valueName;
-	private Map<String, String> map;
+	//	private Map<String, String> map;
+	private List<PropertyValue> values;
 	private State state;
 	private Character previousChar;
 	private State beforeCommentMode;
@@ -88,7 +86,8 @@ public final class CSSParser {
 		this.selectorName = "";
 		this.propertyName = "";
 		this.valueName = "";
-		this.map = new LinkedHashMap<String, String>();
+		//		this.map = new LinkedHashMap<String, String>();
+		this.values = new ArrayList<PropertyValue>();
 		this.state = State.INSIDE_SELECTOR;
 		this.previousChar = null;
 		this.beforeCommentMode = null;
@@ -157,7 +156,9 @@ public final class CSSParser {
 		if (Chars.SEMI_COLON.equals(c)) {
 
 			// Store it in the values map
-			map.put(propertyName.trim(), valueName.trim());
+			PropertyValue pv = new PropertyValue(propertyName.trim(), valueName.trim());
+			values.add(pv);
+			//			map.put(propertyName.trim(), valueName.trim());
 			propertyName = "";
 			valueName = "";
 
@@ -245,17 +246,23 @@ public final class CSSParser {
 			selectorName = "";
 			rule.addSelector(selector);
 
-			for (Entry<String, String> entry : map.entrySet()) {
-
-				String property = entry.getKey();
-				String value = entry.getValue();
-
-				PropertyValue propertyValue = new PropertyValue(property, value);
-				rule.addPropertyValue(propertyValue);
-
+			// Add the property values
+			for (PropertyValue pv : values) {
+				rule.addPropertyValue(pv);
 			}
 
-			map.clear();
+			//			for (Entry<String, String> entry : map.entrySet()) {
+			//
+			//				String property = entry.getKey();
+			//				String value = entry.getValue();
+			//
+			//				PropertyValue propertyValue = new PropertyValue(property, value);
+			//				rule.addPropertyValue(propertyValue);
+			//
+			//			}
+
+			//			map.clear();
+			values.clear();
 
 			if (!rule.getPropertyValues().isEmpty()) {
 				rules.add(rule);
