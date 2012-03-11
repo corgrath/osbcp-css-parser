@@ -68,12 +68,12 @@ public final class CSSParser {
 		return rules;
 	}
 
-	private List<String> selectorNames;
+	private final List<String> selectorNames;
 	private String selectorName;
 	private String propertyName;
 	private String valueName;
 	//	private Map<String, String> map;
-	private List<PropertyValue> values;
+	private final List<PropertyValue> values;
 	private State state;
 	private Character previousChar;
 	private State beforeCommentMode;
@@ -171,6 +171,10 @@ public final class CSSParser {
 
 			state = State.INSIDE_VALUE_ROUND_BRACKET;
 			return;
+
+		} else if (Chars.COLON.equals(c)) {
+
+			throw new IncorrectFormatException(ErrorCode.FOUND_COLON_WHILE_READING_VALUE, "The value '" + valueName.trim() + "' for property '" + propertyName.trim() + "' in the selector '" + selectorName.trim() + "' had a ':' character.");
 
 		} else if (Chars.BRACKET_END.equals(c)) {
 

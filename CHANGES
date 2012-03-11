@@ -1,3 +1,8 @@
+v1.4 2012-03-11 Christoffer Pettersson
+
+	* The parse now gives an error if it founds another colon : while reading the value.
+	
+
 v1.3 2012-02-08 Christoffer Pettersson
 
 	* It is now possible to have duplicate property names in a rule

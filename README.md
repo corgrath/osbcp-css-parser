@@ -3,7 +3,7 @@ OSBCP CSS Parser
 
 A simple CSS parser in Java.
 
-An oh, it is also very strict. If it finds an unexpected character in your CSS it self-destructs, taking you with you - making it a great tool to validate CSS.
+An oh, it is also very strict. If it finds an unexpected character in your CSS it self-destructs, taking you with you - making it a great tool to validate strict CSS.
 
 
 Code examples
@@ -73,6 +73,11 @@ Code is also checked with [PMD](http://pmd.sourceforge.net/) and [Checkstyle](ht
 
 Changes
 ========================================
+
+v1.4 2012-03-11 Christoffer Pettersson
+
+* The parse now gives an error if it founds another colon : while reading the value.
+	
 
 v1.3 2012-02-08 Christoffer Pettersson
 

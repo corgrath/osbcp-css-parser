@@ -24,8 +24,6 @@ import junit.framework.Assert;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
-import com.osbcp.cssparser.IncorrectFormatException.ErrorCode;
-
 public final class CSSParserTest {
 
 	@Test
@@ -186,18 +184,6 @@ public final class CSSParserTest {
 
 		Assert.assertEquals("height", rule.getPropertyValues().get(0).getProperty());
 		Assert.assertEquals("34px", rule.getPropertyValues().get(0).getValue());
-
-	}
-
-	@Test
-	public void testMissingColon() throws Exception {
-
-		try {
-			CSSParser.parse("alpha { color red; }");
-			Assert.fail();
-		} catch (IncorrectFormatException e) {
-			Assert.assertEquals(ErrorCode.FOUND_SEMICOLON_WHEN_READING_PROPERTY_NAME, e.getErrorCode());
-		}
 
 	}
 

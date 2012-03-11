@@ -27,7 +27,7 @@ public class IncorrectFormatException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
-	private ErrorCode errorCode;
+	private final ErrorCode errorCode;
 
 	/**
 	 * Creates a new IncorrectFormatExeption with an error message;
@@ -72,7 +72,12 @@ public class IncorrectFormatException extends Exception {
 		/**
 		 * When the parse founds a colon , before reading a real selector name.
 		 */
-		FOUND_COLON_WHEN_READING_SELECTOR_NAME;
+		FOUND_COLON_WHEN_READING_SELECTOR_NAME,
+
+		/**
+		 * When the parse the value a colon : was found.
+		 */
+		FOUND_COLON_WHILE_READING_VALUE;
 
 	}
 

@@ -49,4 +49,28 @@ public final class CSSParserFailingTests {
 
 	}
 
+	@Test
+	public void testMissingColon() throws Exception {
+
+		try {
+			CSSParser.parse("alpha { color red; }");
+			Assert.fail();
+		} catch (IncorrectFormatException e) {
+			Assert.assertEquals(ErrorCode.FOUND_SEMICOLON_WHEN_READING_PROPERTY_NAME, e.getErrorCode());
+		}
+
+	}
+
+	@Test
+	public void testMissingSemiColon() throws Exception {
+
+		try {
+			CSSParser.parse("alpha { border: 1px solid green background-color:white; left: 0px; }");
+			Assert.fail();
+		} catch (IncorrectFormatException e) {
+			Assert.assertEquals(ErrorCode.FOUND_COLON_WHILE_READING_VALUE, e.getErrorCode());
+		}
+
+	}
+
 }
