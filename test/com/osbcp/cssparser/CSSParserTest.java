@@ -171,13 +171,6 @@ public final class CSSParserTest {
 		 * Rule 2
 		 */
 
-		//		rule = rules.get(1);
-		//		Assert.assertEquals("gamma delta", rule.getSelectors().get(0).toString());
-
-		/*
-		 * Rule 3
-		 */
-
 		rule = rules.get(1);
 		Assert.assertEquals("epsilon", rule.getSelectors().get(0).toString());
 		Assert.assertEquals("zeta", rule.getSelectors().get(1).toString());
@@ -190,7 +183,7 @@ public final class CSSParserTest {
 	@Test
 	public void testFileBasic() throws Exception {
 
-		String contents = IOUtils.toString(this.getClass().getResourceAsStream("css.css"));
+		String contents = IOUtils.toString(this.getClass().getResourceAsStream("css.css"), "UTF-8");
 
 		List<Rule> rules = CSSParser.parse(contents);
 
