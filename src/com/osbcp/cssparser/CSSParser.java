@@ -107,7 +107,12 @@ public final class CSSParser {
 
 		// Special case if we find a comment
 		if (Chars.SLASH.equals(c) && Chars.STAR.equals(nextC)) {
-			beforeCommentMode = state;
+
+			// It's possible to find a comment in a comment
+			if (state != State.INSIDE_COMMENT) {
+				beforeCommentMode = state;
+			}
+
 			state = State.INSIDE_COMMENT;
 		}
 

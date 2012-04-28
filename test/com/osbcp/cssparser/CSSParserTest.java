@@ -103,6 +103,25 @@ public final class CSSParserTest {
 	}
 
 	@Test
+	public void testDoubleComments() throws Exception {
+
+		List<Rule> rules = CSSParser.parse("its-all-empty { /* /* double comment */ } empty { height: 200px; /* /* double comment */width: 100px; }");
+
+		System.out.println(rules);
+
+		Assert.assertEquals(1, rules.size());
+
+		Rule rule = rules.get(0);
+
+		Assert.assertEquals("height", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("200px", rule.getPropertyValues().get(0).getValue());
+
+		Assert.assertEquals("width", rule.getPropertyValues().get(1).getProperty());
+		Assert.assertEquals("100px", rule.getPropertyValues().get(1).getValue());
+
+	}
+
+	@Test
 	public void testBasicMultipleValues() throws Exception {
 
 		List<Rule> rules = CSSParser.parse("div { width: 100px; -mozilla-opacity: 345; } /* a comment */ beta{height:200px;display:blocked;}table td{}");

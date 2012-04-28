@@ -74,6 +74,12 @@ Code is also checked with [PMD](http://pmd.sourceforge.net/) and [Checkstyle](ht
 Changes
 ========================================
 
+v1.5 2012-04-28 Christoffer Pettersson
+
+* Parse can now handle nested comments. 
+  Thanks to Justin Marsan (HammHetfield) for reporting the bug.
+
+
 v1.4 2012-03-11 Christoffer Pettersson
 
 * The parse now gives an error if it founds another colon : while reading the value.
