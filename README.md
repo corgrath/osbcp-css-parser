@@ -76,13 +76,13 @@ Changes
 
 v1.5 2012-04-28 Christoffer Pettersson
 
-* Parse can now handle nested comments. 
+* The parser can now handle nested comments. 
   Thanks to Justin Marsan (HammHetfield) for reporting the bug.
 
 
 v1.4 2012-03-11 Christoffer Pettersson
 
-* The parse now gives an error if it founds another colon : while reading the value.
+* The parser now gives an error if it founds another colon : while reading the value.
 	
 
 v1.3 2012-02-08 Christoffer Pettersson
