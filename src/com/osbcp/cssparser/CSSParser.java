@@ -29,7 +29,13 @@ import com.osbcp.cssparser.IncorrectFormatException.ErrorCode;
  */
 
 public final class CSSParser {
+	
+	/**
+	 * Variable used to keep track of what line the CSS Parser is currently analyzing.
+	 */
 
+	public static int lineNumber = 1;
+	
 	/**
 	 * Reads CSS as a String and returns back a list of Rules.
 	 * 
@@ -83,6 +89,7 @@ public final class CSSParser {
 	 */
 
 	private CSSParser() {
+		lineNumber = 1;
 		this.selectorName = "";
 		this.propertyName = "";
 		this.valueName = "";
@@ -104,6 +111,11 @@ public final class CSSParser {
 	 */
 
 	private void parse(final List<Rule> rules, final Character c, final Character nextC) throws Exception {
+		
+		if(c == '\n')
+		{
+			lineNumber++;
+		}
 
 		// Special case if we find a comment
 		if (Chars.SLASH.equals(c) && Chars.STAR.equals(nextC)) {

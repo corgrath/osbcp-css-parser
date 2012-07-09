@@ -37,7 +37,7 @@ public class IncorrectFormatException extends Exception {
 	 */
 
 	IncorrectFormatException(final ErrorCode errorCode, final String message) {
-		super(message);
+		super(message + " Line number " + CSSParser.lineNumber + ".");
 		this.errorCode = errorCode;
 	}
 

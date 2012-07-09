@@ -29,10 +29,11 @@ public final class CSSParserFailingTests {
 	public void testCommaFirstAsSelector() throws Exception {
 
 		try {
-			CSSParser.parse("alpha { width: 100px; } , beta { height: 200px; } ");
+			CSSParser.parse("alpha { width: 100px; } \n , beta { height: 200px; } ");
 			Assert.fail();
 		} catch (IncorrectFormatException e) {
 			Assert.assertEquals(ErrorCode.FOUND_COLON_WHEN_READING_SELECTOR_NAME, e.getErrorCode());
+			Assert.assertTrue(e.getMessage().endsWith("Line number 2."));
 		}
 
 	}
@@ -45,6 +46,7 @@ public final class CSSParserFailingTests {
 			Assert.fail();
 		} catch (IncorrectFormatException e) {
 			Assert.assertEquals(ErrorCode.FOUND_END_BRACKET_BEFORE_SEMICOLON, e.getErrorCode());
+			Assert.assertTrue(e.getMessage().endsWith("Line number 1."));
 		}
 
 	}
@@ -53,10 +55,11 @@ public final class CSSParserFailingTests {
 	public void testMissingColon() throws Exception {
 
 		try {
-			CSSParser.parse("alpha { color red; }");
+			CSSParser.parse("\n\n\n\n\n alpha { color red; }");
 			Assert.fail();
 		} catch (IncorrectFormatException e) {
 			Assert.assertEquals(ErrorCode.FOUND_SEMICOLON_WHEN_READING_PROPERTY_NAME, e.getErrorCode());
+			Assert.assertTrue(e.getMessage().endsWith("Line number 6."));
 		}
 
 	}
