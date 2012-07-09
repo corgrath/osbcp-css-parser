@@ -53,5 +53,18 @@ public final class SelectorTest {
 		Assert.assertTrue(selector1a.equals(selector1b));
 
 	}
+	
+	@Test
+	public void testSetName() {
+
+		Selector selector1a = new Selector("div1");
+
+		Assert.assertTrue(selector1a.toString().equals("div1"));
+		
+		selector1a.setSelectorName("newdiv1");
+		
+		Assert.assertTrue(selector1a.toString().equals("newdiv1"));
+
+	}
 
 }

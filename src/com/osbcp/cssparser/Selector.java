@@ -36,6 +36,14 @@ public final class Selector {
 	public Selector(final String name) {
 		this.name = name;
 	}
+	
+	/**
+	 * 
+	 * @param name Selector name.
+	 */
+	public void setSelectorName(final String name) {
+		this.name = name;
+	}
 
 	@Override
 	public String toString() {
