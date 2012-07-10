@@ -27,7 +27,6 @@ public final class CSSParserFailingTests {
 
 	@Test
 	public void testCommaFirstAsSelector() throws Exception {
-
 		try {
 			CSSParser.parse("alpha { width: 100px; } \n , beta { height: 200px; } ");
 			Assert.fail();

@@ -17,6 +17,7 @@
 
 package com.osbcp.cssparser;
 
+import java.io.FileInputStream;
 import java.util.List;
 
 import junit.framework.Assert;
@@ -25,11 +26,6 @@ import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
 public final class CSSParserTest {
-
-	@Test
-	public void testNull() throws Exception {
-		CSSParser.parse(null);
-	}
 
 	@Test
 	public void testEmpty() throws Exception {
@@ -49,7 +45,6 @@ public final class CSSParserTest {
 
 	@Test
 	public void testBasicSingle() throws Exception {
-
 		List<Rule> rules = CSSParser.parse("div { width: 100px; }");
 
 		Assert.assertEquals(1, rules.size());
@@ -219,7 +214,8 @@ public final class CSSParserTest {
 	@Test
 	public void testFileBasic() throws Exception {
 
-		String contents = IOUtils.toString(this.getClass().getResourceAsStream("css.css"), "UTF-8");
+		FileInputStream fileInputStream = new FileInputStream("src/test/resources/css.css");
+		String contents = IOUtils.toString(fileInputStream, "UTF-8");
 
 		List<Rule> rules = CSSParser.parse(contents);
 
