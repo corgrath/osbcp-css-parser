@@ -16,4 +16,4 @@ dependencies {
     testCompile group: 'commons-io', name: 'commons-io', version: '2.4'
 }
 
-task checkstyleTest(overwrite: true) << {};
+task checkstyleTest(overwrite: true) << {}; //Overwrite check style for test code as we don't want to run checkstyle on tests.
