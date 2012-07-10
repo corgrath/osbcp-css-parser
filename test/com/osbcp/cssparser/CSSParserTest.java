@@ -77,6 +77,23 @@ public final class CSSParserTest {
 		Assert.assertEquals("underlined", rule.getPropertyValues().get(1).getValue());
 
 	}
+	
+	@Test
+	public void testCommentInsideRuleWithCharSequence() throws Exception {
+
+		String css = "table /* and a comment here */ td { width: 100px; /* should be ignored */ text-decoration: underlined; }";
+		List<Rule> rules = CSSParser.parse(css.subSequence(0, css.length()));
+
+		Assert.assertEquals(1, rules.size());
+
+		Rule rule = rules.get(0);
+		Assert.assertEquals("table  td", rule.getSelectors().get(0).toString());
+		Assert.assertEquals("width", rule.getPropertyValues().get(0).getProperty());
+		Assert.assertEquals("100px", rule.getPropertyValues().get(0).getValue());
+		Assert.assertEquals("text-decoration", rule.getPropertyValues().get(1).getProperty());
+		Assert.assertEquals("underlined", rule.getPropertyValues().get(1).getValue());
+
+	}
 
 	@Test
 	public void testBase64() throws Exception {
