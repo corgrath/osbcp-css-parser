@@ -27,11 +27,6 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 		</dependency>
-		<dependency>
-			<groupId>checkstyle</groupId>
-			<artifactId>checkstyle</artifactId>
-			<version>5.0</version>
-		</dependency>
 	</dependencies>
 
 	<build>
