@@ -23,6 +23,7 @@ import org.junit.Test;
 
 import com.osbcp.cssparser.IncorrectFormatException.ErrorCode;
 
+@SuppressWarnings("deprecation")
 public final class CSSParserFailingTests {
 
 	@Test

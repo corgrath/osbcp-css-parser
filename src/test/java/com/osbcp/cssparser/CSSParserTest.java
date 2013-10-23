@@ -24,6 +24,7 @@ import junit.framework.Assert;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
+@SuppressWarnings("deprecation")
 public final class CSSParserTest {
 
 	@Test
