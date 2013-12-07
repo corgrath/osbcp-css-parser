@@ -1,6 +1,10 @@
 OSBCP CSS Parser
 ========================================
 
+This branch has changed to use a gradle (http://gradle.org/) build.
+Download gradle and inside the project directory run 'gradlew eclipse clean build check'
+Which will turn the project into an eclipse project, build and check it.
+
 A simple CSS parser in Java.
 
 An oh, it is also very strict. If it finds an unexpected character in your CSS it self-destructs, taking you with you - making it a great tool to validate strict CSS.

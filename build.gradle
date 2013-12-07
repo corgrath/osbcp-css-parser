@@ -1,0 +1,19 @@
+/* 
+ * builds css parser and provides a jar that can be used by other builds 
+ */
+
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile group: 'commons-io', name: 'commons-io', version: '2.4'
+}
+
+task checkstyleTest(overwrite: true) << {}; //Overwrite check style for test code as we don't want to run checkstyle on tests.
