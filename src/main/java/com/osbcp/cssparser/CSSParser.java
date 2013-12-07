@@ -34,7 +34,7 @@ public final class CSSParser {
 	 * Variable used to keep track of what line the CSS Parser is currently analyzing.
 	 */
 
-	public static int lineNumber = 1;
+	public int lineNumber = 1;
 	
 	/**
 	 * Reads CSS as a String and returns back a list of Rules.
