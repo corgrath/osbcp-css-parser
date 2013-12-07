@@ -45,19 +45,6 @@ public final class CSSParser {
 	 */
 
 	public static List<Rule> parse(final String css) throws Exception {
-
-		return parse(css.subSequence(0, css.length()));
-	}
-	
-	/**
-	 * Reads CSS as a CharSequence and returns back a list of Rules.
-	 * 
-	 * @param css A CharSequence representation of CSS.
-	 * @return A list of Rules
-	 * @throws Exception If any errors occur.
-	 */
-	
-	public static List<Rule> parse(final CharSequence css) throws Exception {
 		
 		CSSParser parser = new CSSParser();
 
@@ -86,7 +73,7 @@ public final class CSSParser {
 
 		return rules;
 	}
-
+	
 	private final List<String> selectorNames;
 	private String selectorName;
 	private String propertyName;
