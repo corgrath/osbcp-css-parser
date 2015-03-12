@@ -14,11 +14,11 @@ As String directly:
 	List<Rule> rules = CSSParser.parse("div { width: 100px; -mozilla-opacity: 345; }");
 ```	
 Or from a file (using [Apache Commons IO](http://commons.apache.org/io/)):
-
+```java
 		String contents = IOUtils.toString(this.getClass().getResourceAsStream("stylesheet.css"));
 
 		List<Rule> rules = CSSParser.parse(contents);
-		
+```		
 To print it  all out:
 ```java
 	for (Rule rule : rules) {
