@@ -10,9 +10,9 @@ Code examples
 ========================================
 
 As String directly:
-
+```java
 	List<Rule> rules = CSSParser.parse("div { width: 100px; -mozilla-opacity: 345; }");
-	
+```	
 Or from a file (using [Apache Commons IO](http://commons.apache.org/io/)):
 
 		String contents = IOUtils.toString(this.getClass().getResourceAsStream("stylesheet.css"));
@@ -20,15 +20,15 @@ Or from a file (using [Apache Commons IO](http://commons.apache.org/io/)):
 		List<Rule> rules = CSSParser.parse(contents);
 		
 To print it  all out:
-
+```java
 	for (Rule rule : rules) {
 	
 		System.out.println(rule);
 		
 	}
-	
+```	
 Or go into details:
-
+```java
 	for (Rule rule : rules) {
 	
 		// Get all the selectors (such as 'table', 'table td', 'a')
@@ -38,7 +38,7 @@ Or go into details:
 		List<PropertyValue> propertyValues = rule.getPropertyValues();
 	
 	}
-	
+```	
 Please view the JavaDoc for more informaton.
 	
 	
