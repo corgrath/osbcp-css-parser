@@ -1,0 +1,2940 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #000000;
+	background: #efefef url("https://static.loopia.se/inline/header.png") repeat-x;
+	min-width: 900px;
+	line-height: 18px;
+}
+
+img {
+	padding: 0px;
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+	color: #777777;
+}
+
+a img {
+	border: none;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #dd0000;
+}
+
+h1 {
+	font: 26px Arial, Helvetica, sans-serif;
+	color: #666666;
+	font-weight: normal;
+	padding: 15px 0px 0px 0px;
+	margin: 0px;
+}
+
+h2 {
+	font: 20px Arial, Helvetica, sans-serif;
+	color: #666666;
+	font-weight: normal;
+	padding: 10px 0px 0px 0px;
+	margin: 0px;
+}
+
+
+h3 {
+	font: 16px Arial, Helvetica, sans-serif;
+	color: #444444;
+	font-weight: normal;
+	padding: 5px 0px 0px 0px;
+	margin: 0px;
+}
+
+label {
+	float: left;
+	width: 150px;
+}
+
+ul.packages {
+	margin: 11px 0px 0px 0px;
+	padding: 0px;
+}
+
+ul.packages li {
+	margin: 0px;
+	padding: 0px 0px 0px 20px;
+	list-style-type: none;
+	background: url(https://static.loopia.se/inline/about-gif.gif) no-repeat;
+	background-position: center left;
+}
+
+label.no {
+	float: none;
+}
+
+p {
+	margin: 5px 0px 15px 0px;
+	padding: 0px;
+}
+
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+strong {
+	color: #555555;
+}
+
+pre {
+	border: 1px #aab677 solid;
+	background: #eef8c7 url(https://static.loopia.se/inline/login-bg6.png) repeat-x;
+	padding: 10px 0px 10px 15px;
+	margin: 5px 0px 15px 0px;
+}
+
+dl {
+	margin: 3px 0px 13px 10px;
+	padding: 0px;
+}
+
+dl dt {
+	margin: 0px;
+	padding: 2px 0px 2px 12px;
+	background: url(https://static.loopia.se/inline/arrow.png) no-repeat;
+	background-position: top left;
+	font-weight: bold;
+	color: #769a4c;
+}
+
+dl dd {
+	margin: 0px 0px 0px 12px;
+	padding: 0px 0px 8px 0px;
+}
+
+.ctop {
+	height: 100px;
+	border: none;
+	width: 100%;
+}
+
+.error-input {
+	color: #dd0000;
+	font-weight: normal;
+	padding-left: 10px;
+}
+
+.error-label {
+	color: #dd0000;
+	font-weight: bold;
+}
+
+.error-label-right {
+	color: #dd0000;
+	padding-left: 10px;
+}
+
+.error-label-down {
+	color: #dd0000;
+	padding: 5px 0px 0px 10px;
+}
+
+.error-label-thin {
+	color: #dd0000;
+	font-weight: normal;
+}
+
+.small {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px #888888 solid;
+	color: #888888;
+}
+
+.wrapper {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.banner-wrapper {
+	width: 100%;
+	background: #fdfdee url(https://static.loopia.se/inline/bg-campaign.png) repeat-x;
+}
+
+#header-wrapper {
+	background: #efefef url("https://static.loopia.se/inline/header.png") repeat-x;
+	width: 100%;
+}
+
+#middle-wrapper {
+	width: 100%;
+	float: left;
+	background-color: #ffffff;
+}
+
+#footer-wrapper {
+	width: 100%;
+	float: left;
+}
+
+#header-swe {
+	width: 100%;
+	height: 121px;
+	background: url("https://static.loopia.se/inline/se/header-big.png") no-repeat;
+}
+
+#header-serb {
+	width: 100%;
+	height: 121px;
+	background: url("https://static.loopia.se/inline/rs/header-big.png") no-repeat;
+}
+
+#menu {
+	float: left;
+	padding: 11px 0px 0px 12px;
+	width: 875px;
+}
+
+#menu img {
+	margin: 0px 3px 0px 3px;
+}
+
+#content-nopadding {
+	float: left;
+	width: 600px;
+	padding: 0px 0px 10px 0px;
+}
+
+.content {
+	float: left;
+	width: 580px;
+	padding: 10px 20px 0px 0px;
+	margin: 0px;
+}
+
+
+#content ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+#content ul.regular {
+	margin: 10px 0px 10px 0px;
+	padding: 0px;
+}
+
+#content ul li  {
+	list-style-type: none;
+	margin: 0px 0px 0px 20px;
+	padding: 0px 0px 0px 20px;
+	background: url(https://static.loopia.se/inline/red-check.png) no-repeat;
+	background-position: left center;
+}
+
+#content ul.regular li {
+	list-style-type: disc;
+	margin: 0px 0px 0px 5px;
+	padding: 0px 0px 0px 15px;
+	background: none;
+}
+
+ul#menulist {
+	float: left;
+	list-style: none;
+	padding: 0px;
+	margin: 0px 8px 0px 0px;
+}
+
+ul#menulist li {
+	display: inline;
+	padding: 0px 6px 0px 5px;
+	border-right: 1px #bbbbbb solid;
+}
+
+ul#menulist li a {
+	text-decoration: none;
+	color: #555555;
+	font-weight: bold;
+}
+
+ul#menulist li a:hover {
+	text-decoration: none;
+	border-bottom: 1px #880000 solid;
+	color: #990000;
+}
+
+#login {
+	float: right;
+	height: 73px;
+	padding: 13px 20px 0px 0px;
+	width: 260px;
+	color: #ffffff;
+}
+
+/* LOGOUT */
+#logged-in {
+	float: left;
+	height: 64px;
+	padding: 18px 20px 4px 25px;
+	margin: 0px 0 0 3px;
+	width: 218px;
+	color: #ffffff;
+}
+
+.logged-in-user{
+	color:#FFCC00;
+	font-size:14px;
+	font-weight:bold;
+	margin: 0px 0 4px 0;
+}
+
+.loginbox-btn{
+	background: url(https://static.loopia.se/inline/btn-logout_left.png) left 2px no-repeat ;
+	padding-left: 10px;
+	display: block;
+	float: left;
+	margin-right: 5px;
+}
+
+.loginbox-btn span{
+	background: url(https://static.loopia.se/inline/btn-logout_bg.png) right 2px no-repeat; /* right 1px in cz and rz for FF */
+	*background: url(https://static.loopia.se/inline/btn-logout_bg.png) right 2px no-repeat;
+	font-size: 10px;
+	color: #353535;
+	padding-right: 10px;
+	display: inline-block;
+}
+
+.loginbox-btn-home div{
+	background: url(https://static.loopia.se/inline/btn-logout-home.png) no-repeat;
+	width: 20px;
+	height: 15px;
+	float: left;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+/*
+.loginbox-btn{
+	background: url(https://static.loopia.se/inline/btn-logout_left.png) left no-repeat;
+	padding: 0px 0px 2px 11px;
+	margin-right: 3px;
+	width: 15px;
+
+}
+
+.loginbox-btn span{
+	background: url(https://static.loopia.se/inline/btn-logout_bg.png) right no-repeat;
+	font-size: 10px;
+	color: #353535;
+	padding: 3px 12px 3px 0;
+}
+*/
+/* END LOGOUT */
+
+h4 {
+	margin: 0px;
+	padding: 0px;
+	font: 13px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #555555;
+}
+
+form.login {
+	margin: 0px;
+	padding: 4px 20px 0px 0px;
+	text-align: left;
+	line-height: 21px;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 3px 0px 3px 0px;
+	padding: 0px;
+	line-height: 18px;
+	width: 100%;
+}
+
+table tr td {
+	vertical-align: top;
+	padding-top: 20px;
+}
+
+table tr td.top {
+	padding-top: 0px;
+}
+
+#login table tr td {
+	padding: 2px 0px 2px 0px;
+	margin: 0px;
+}
+
+input, textarea {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #444444;
+}
+
+input.userid {
+	border-left: 1px #777777 solid;
+	border-top: 1px #777777 solid;
+	border-bottom: 1px #ffffff solid;
+	border-right: 1px #ffffff solid;
+	background: #f0efef url(https://static.loopia.se/inline/login-bg.png) repeat-x;
+	font: 12px Arial, Helvetica, sans-serif;
+	padding-left: 3px;
+	color: #000000;
+}
+
+input.domain {
+	border: 1px #888888 solid;
+	background-color: #fafafa;
+	font: 12px Arial, Helvetica, sans-serif;
+	padding-left: 3px;
+	color: #ffffff;
+	width: 145px;
+}
+
+input.submit {
+	border: 1px #ffffff solid;
+	background-color: #660000;
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #ffffff;
+}
+
+input.submit2 {
+	border: 1px #888888 solid;
+	background-color: #aaaaaa;
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #ffffff;
+}
+
+#content-wrapper {
+	padding: 10px 19px 0px 19px;
+	float: left;
+}
+
+#content-wrapper2 {
+	width: 100%;
+	float: left;
+	background: url("https://static.loopia.se/inline/sidebar-bg.png") repeat-y;
+	background-position: right;
+}
+
+#content-wrapper #campaign {
+	width: 862px;
+	float: left;
+	border-bottom: 1px #888888 solid;
+ 	min-height: 20px;
+}
+
+.banner-wrapper .campaign {
+	width: 862px;
+	margin-left: auto;
+	margin-right: auto;
+	/* min-height: 20px; */
+	padding: 5px 0px 0px 0px;
+	/* padding: 12px 0px 1px 0px; */
+	height: 185px;
+}
+
+#content-wrapper #campaign img {
+	margin-bottom: 10px;
+}
+
+#content-wrapper #campaign h1 {
+	font: 22px Arial, Helvetica, sans-serif;
+	color: #999999;
+	font-weight: normal;
+	padding: 0px;
+	margin: 10px 0px 5px 0px;
+}
+
+h1 a {
+	color: #dba71a;
+	border-bottom: 1px #cccccc solid;
+}
+
+#content-wrapper #campaign .flash {
+	/* margin-bottom: 11px; */
+	margin: 5px 0px 20px 0px;
+}
+
+#footer {
+	float: left;
+	margin: 0px 0px 10px 0px;
+	width: 862px;
+	height: 250px;
+	background: url("https://static.loopia.se/inline/footer.png") no-repeat;
+	color: #ffffff;
+}
+
+#footer2 {
+	width: 881px;
+	height: 237px;
+		background: url("https://static.loopia.se/inline/footer-6.png") no-repeat;
+	color: #666666;
+	margin-bottom: 10px;
+}
+
+#footer3 {
+	width: 881px;
+	height: 164px;
+	background: url("https://static.loopia.se/inline/footer-8.png") no-repeat;
+	color: #666666;
+	margin-bottom: 10px;
+}
+
+#subtabs {
+	float: left;
+	width: 100%;
+	height: 40px;
+	background: url("https://static.loopia.se/inline/subtabs-bg.png") repeat-x;
+	margin-top: 5px;
+}
+
+ul#subtabslist {
+	float: right;
+	list-style: none;
+	padding: 12px 2px 0px 0px;
+	margin: 0px;
+}
+
+ul#subtabslist li {
+	display: inline;
+	padding: 0px 8px 0px 8px;
+	border-left: 1px #bbbbbb solid;
+}
+
+ul#subtabslist li a {
+	color: #444444;
+	text-decoration: none;
+}
+
+ul#subtabslist li a:hover {
+	text-decoration: none;
+	border-bottom: 1px #880000 solid;
+	color: #880000;
+}
+
+#sidebar {
+	float: left;
+	width: 262px;
+	background: #ffffff url("https://static.loopia.se/inline/sidebar-bg.png") repeat-y;
+}
+
+#sidebar .hl-top {
+	width: 252px;
+	height: 33px;
+	background: url("https://static.loopia.se/inline/sb-hl-top.png") no-repeat;
+	color: #888888;
+	font: 14px Arial, Helvetica, sans-serif;
+	padding: 13px 0px 0px 10px;
+	font-weight: bold;
+}
+
+#sidebar .hl-middle {
+	width: 252px;
+	height: 34px;
+	background: url("https://static.loopia.se/inline/sb-headline.png") no-repeat;
+	color: #888888;
+	font: 14px Arial, Helvetica, sans-serif;
+	padding: 13px 0px 0px 10px;
+	font-weight: bold;
+}
+
+#sidebar .s_content {
+	width: 242px;
+	background: #f4f4f4 url("https://static.loopia.se/inline/sb-content-bg.png") repeat-y;
+	padding: 10px;
+}
+
+#sidebar .s_content strong {
+	color: #666666;
+}
+
+#sidebar .s_content p {
+	font: 11px Arial, Helvetica, sans-serif;
+	line-height: 15px;
+	color: #666666;
+}
+
+#sidebar .s_content ul {
+	margin: 0px 0px 10px 0px;
+	padding: 0px 5px 0px 5px;
+}
+
+#sidebar .s_content ul li {
+	list-style-type: none;
+	margin: 0px;
+	padding: 2px 0px 2px 10px;
+	background: url("https://static.loopia.se/inline/arrow2.png") no-repeat;
+	background-position: left center;
+	border-bottom: 1px #dddddd solid;
+}
+
+#sidebar .s_content ul.domain {
+	margin: 0px;
+	padding: 0px 5px 0px 5px;
+}
+
+#sidebar .s_content ul.domain li {
+	list-style-type: none;
+	margin: 0px;
+	padding: 2px 0px 2px 10px;
+	background: url("https://static.loopia.se/inline/arrow.png") no-repeat;
+	background-position: left center;
+	border-bottom: 1px #cccccc solid;
+}
+
+#sidebar .s_content ul.domaintasks {
+	margin: 0px 5px 0px 5px;
+	padding: 2px 0px 2px 0px;
+	color: #ffffff;
+	background: #cccccc;
+	background-position: top left;
+}
+
+#sidebar .s_content ul.domaintasks li {
+
+	list-style-type: none;
+
+	margin: 0px 0px 0px 15px;
+
+	padding: 0px;
+
+	background: none;
+
+
+
+
+
+}
+
+
+
+#sidebar #domain-wrapper {
+
+	margin-bottom: 10px;
+
+}
+
+
+
+#sidebar .s_content a {
+
+	color: #666666;
+
+}
+
+
+
+#sidebar .s_content a:hover {
+
+	color: #880000;
+
+}
+
+
+
+#sidebar .s_bottom {
+
+	width: 262px;
+
+	height: 55px;
+
+	background: url("https://static.loopia.se/inline/sb-bottom3.png") no-repeat;
+
+}
+
+
+
+table.spec {
+
+	/* margin: 10px 0px 10px 0px; */
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+
+
+table.spec tr td {
+
+	border: 1px #888888 solid;
+
+	padding: 4px 8px 4px 6px;
+
+	background: url(https://static.loopia.se/inline/table-right.png) repeat-y;
+
+	background-position: right;
+
+	vertical-align: top;
+
+}
+
+
+
+table.spec tr td.top {
+
+	border: 1px #888888 solid;
+
+	padding: 8px 8px 8px 6px;
+
+	font-size: 13px;
+
+	font-weight: bold;
+
+	color: #777777;
+
+	background: #d7d7d7 url(https://static.loopia.se/inline/table-top2.png) repeat-x;
+
+}
+
+
+
+table.spec tr td.tinted {
+
+	background: #f4f4f4 url(https://static.loopia.se/inline/table-right2.png) repeat-y;
+
+	background-position: right;
+
+}
+
+
+
+table.spec2 {
+
+	margin: 0px;
+
+	padding: 0px;
+
+	border: 1px #dddddd solid;
+
+}
+
+
+
+table.spec2 tr td {
+
+	border-top: 1px #dddddd solid;
+
+	border-bottom: 1px #dddddd solid;
+
+	padding: 3px 4px 3px 4px;
+
+}
+
+
+
+table.spec2 tr td.tinted {
+
+	border-top: 1px #dddddd solid;
+
+	border-bottom: 1px #dddddd solid;
+
+	padding: 3px 4px 3px 4px;
+
+	background-color: #f9f9f9;
+
+}
+
+
+
+table.spec2 tr td.tinted strong {
+
+	color: #777777;
+
+}
+
+
+
+.hl {
+
+	border-bottom: 1px #888888 solid;
+
+	width: 600px;
+
+	height: 1px;
+
+	margin: 7px 0px 10px 0px;
+
+}
+
+
+
+.front-info {
+
+	width: 100%;
+
+	height: 33px;
+
+	padding: 30px 0px 7px 0px;
+
+	color: #888888;
+
+	font: 20px Arial, Helvetica, sans-serif;
+
+	font-weight: normal;
+
+}
+
+
+
+.front-info-nopic {
+
+	width: 100%;
+
+	height: 22px;
+
+	padding-top: 30px;
+
+	margin-bottom: 22px;
+
+	font: 14px Arial, Helvetica, sans-serif;
+
+	font-weight: bold;
+
+	color: #888888;
+
+	border-bottom: 1px #888888 solid;
+
+}
+
+
+
+.front-small-wrapper {
+
+	width: 280px;
+
+	float: left;
+
+
+
+}
+
+
+
+.front-small-wrapper .front-info {
+
+	width: 280px;
+
+	height: 33px;
+
+	padding: 30px 0px 7px 0px;
+
+	color: #888888;
+
+	font: 20px Arial, Helvetica, sans-serif;
+
+	font-weight: normal;
+
+}
+
+
+
+.front-small-wrapper .front-middle {
+
+	width: 280px;
+
+}
+
+
+
+.front-small-wrapper .front-bottom {
+
+	width: 280px;
+
+	height: 6px;
+
+
+}
+
+
+
+.tab-mysql {
+
+	width: 510px;
+
+	min-height: 150px;
+
+	padding: 18px 0px 0px 70px;
+
+	background: url("https://static.loopia.se/inline/tab-mysql.png") no-repeat;
+
+	background-position: top left;
+
+}
+
+
+
+.tab-info {
+
+	width: 510px;
+
+	margin-top: 20px;
+
+	padding-top: 15px;
+
+	border-top: 1px #888888 solid;
+
+}
+
+
+
+.tab-info2 {
+
+	width: 510px;
+
+	margin-top: 10px;
+
+	padding: 0px 0px 0px 70px;
+
+}
+
+
+
+.searchdomain {
+
+	width: 258px;
+
+	border: 1px #888888 solid;
+
+	background-color: #f4f4f4;
+
+	padding: 10px;
+
+}
+
+
+
+.searchdomain form {
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+
+
+.domainsearch {
+
+	width: 100%;
+
+	border-left: 1px #888888 solid;
+
+	border-right: 1px #888888 solid;
+
+	border-bottom: 1px #888888 solid;
+
+	background: #f4f4f4 url(https://static.loopia.se/inline/domainsearch.png) no-repeat;
+
+	background-position: top center;
+
+
+
+}
+
+
+
+.red-wrapper {
+
+	margin-bottom: 10px;
+
+}
+
+
+
+.underline {
+
+	width: 100%;
+
+	border-bottom: 1px #cccccc solid;
+
+	margin-bottom: 8px;
+
+	padding-bottom: 3px;
+
+}
+
+
+
+.content-superwrapper {
+
+	background: #efefef url(https://static.loopia.se/inline/content-top6.png) repeat-x;
+
+	height: 300px;
+
+}
+
+
+
+.content-middle {
+
+	background: #ffffff url(https://static.loopia.se/inline/content-middle2.png) repeat-y;
+
+	width: 950px;
+
+	margin-left: auto;
+
+	margin-right: auto;
+
+}
+
+
+
+.content-top {
+	width: 950px;
+	background: url(https://static.loopia.se/inline/content-topsmall7.png) no-repeat;
+	background-position: top left;
+	min-height: 288px;
+	overflow: hidden;
+}
+
+
+
+.content-bottom {
+
+	float: left;
+
+	background: #efefef url(https://static.loopia.se/inline/content-bottom2.png) no-repeat;
+
+	width: 100%;
+
+	padding-top: 20px;
+
+	padding-bottom: 5px;
+
+	text-align: right;
+
+	vertical-align: top;
+
+}
+
+
+
+.content-bottom a {
+
+	color: #777777;
+
+}
+
+
+
+.content-bottom a:hover {
+
+	color: #bb0000;
+
+}
+
+
+
+.content-bottom .info-bottom {
+
+	float: left;
+
+	/* padding-left: 50px; */
+
+	padding-left: 75px;
+
+}
+
+
+
+.sidebar-wrapper {
+	width: 255px;
+	float: left;
+	overflow: hidden;
+	margin-top: 8px;
+}
+
+
+
+.sidebar-wrapper .menu-top {
+
+	width: 243px;
+
+	height: 32px;
+
+	background: url(https://static.loopia.se/inline/sb-hl-top.png) no-repeat;
+
+	color: #777777;
+
+	font-size: 14px;
+
+	font-weight: bold;
+
+	padding: 13px 0px 0px 12px;
+
+}
+
+
+
+.sidebar-wrapper .menu-middle {
+	width: 235px;
+	background: url(https://static.loopia.se/inline/sb-content-bg.png) repeat-y;
+	padding: 10px;
+	color: #777777;
+}
+
+.sidebar-wrapper .menu-middle3 {
+	width: 253px;
+	background: url(https://static.loopia.se/inline/sb-content-bg.png) repeat-y;
+	padding: 5px 1px 10px 8px;
+	color: #777777;
+}
+
+.sidebar-wrapper .menu-middle3 a {
+	border-bottom: 1px #cccccc solid;
+}
+
+.sidebar-wrapper .menu-middle3 a:hover {
+	border-bottom: 1px #dd0000 solid;
+}
+
+.sidebar-wrapper .menu-middle3 .dnssec_working_and_verified {
+	background: url(https://static.loopia.se/inline/dnssec_working_and_verified.png) no-repeat;
+	background-position: center left;
+	padding: 0px 10px 0px 53px;
+}
+
+.sidebar-wrapper .menu-middle3 .dnssec_working_but_not_verified {
+	background: url(https://static.loopia.se/inline/dnssec_working_but_not_verified.png) no-repeat;
+	background-position: center left;
+	padding: 0px 10px 0px 53px;
+}
+
+.sidebar-wrapper .menu-middle3 .dnssec_not_working {
+	background: url(https://static.loopia.se/inline/dnssec_not_working.png) no-repeat;
+	background-position: center left;
+	padding: 0px 10px 0px 53px;
+}
+
+.sidebar-wrapper .menu-middle3 .ipv6 {
+	background: url(https://static.loopia.se/inline/ipv6.png) no-repeat;
+	background-position: center left;
+	padding: 0px 10px 0px 53px;
+}
+
+.sidebar-wrapper .menu-middle3 .ipv4 {
+	background: url(https://static.loopia.se/inline/ipv4.png) no-repeat;
+	background-position: center left;
+	padding: 0px 10px 0px 53px;
+}
+
+.sidebar-wrapper .menu-middle3 .browser-new {
+	background: url(https://static.loopia.se/inline/browser-new.png) no-repeat;
+	background-position: center left;
+	padding: 0px 10px 0px 53px;
+}
+
+.sidebar-wrapper .menu-middle3 .browser-old {
+	background: url(https://static.loopia.se/inline/browser-old.png) no-repeat;
+	background-position: center left;
+	padding: 0px 10px 0px 53px;
+}
+
+.sidebar-wrapper .menu-middle3 .init {
+	background: url(https://static.loopia.se/inline/icon-init-mini.gif) no-repeat;
+	background-position: center left;
+	padding: 0px 10px 0px 53px;
+}
+
+.sidebar-wrapper .menu-middle3 h3 {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 0px 0px 0px;
+	color: #777777;
+}
+
+.sidebar-wrapper .menu-middle3 p {
+	padding: 2px 0px 10px 0px;
+	margin: 0px 10px 0px 0px;
+	font-size: 11px;
+	line-height: 15px;
+	border-bottom: 1px #dddddd solid;
+}
+
+/*
+.sidebar-wrapper .menu-middle3 .success h3, .sidebar-wrapper .menu-middle3 .error h3, .sidebar-wrapper .menu-middle3 .init h3 {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 0px 0px 0px;
+	color: #777777;
+}
+
+.sidebar-wrapper .menu-middle3 .success p, .sidebar-wrapper .menu-middle3 .error p, .sidebar-wrapper .menu-middle3 .init p {
+	padding: 2px 0px 10px 0px;
+	margin: 0px 10px 0px 0px;
+	font-size: 11px;
+	line-height: 15px;
+	border-bottom: 1px #dddddd solid;
+}
+
+*/
+
+
+.sidebar-wrapper .menu-middle p {
+
+	font: 11px Arial, Helvetica, sans-serif;
+
+	line-height: 15px;
+
+	color: #666666;
+
+}
+
+
+
+.sidebar-wrapper .menu-middle2 {
+
+	width: 243px;
+
+	height: 32px;
+
+	background: url(https://static.loopia.se/inline/sidebar-middle.png) no-repeat;
+
+	color: #777777;
+
+	font-size: 14px;
+
+	font-weight: bold;
+
+	padding: 13px 0px 0px 12px;
+
+}
+
+
+
+.sidebar-wrapper .menu-middle ul {
+
+	margin: 0px 0px 10px 0px;
+
+	padding: 0px 5px 0px 5px;
+
+}
+
+
+
+.sidebar-wrapper .menu-middle ul li {
+	list-style-type: none;
+	margin: 0px;
+	padding: 2px 0px 2px 13px;
+	/* background: url("https://static.loopia.se/inline/arrow2.png") no-repeat; */
+	background: url(https://static.loopia.se/inline/arrow4.gif) no-repeat;
+	background-position: 0px 7px;
+	border-bottom: 1px #dddddd solid;
+}
+
+
+
+.sidebar-wrapper .menu-middle ul li.olist {
+
+	list-style-type: none;
+
+	margin: 0px;
+
+	padding: 2px 0px 2px 0px;
+
+	background: none;
+
+	border-bottom: 1px #dddddd solid;
+
+}
+
+
+
+.sidebar-wrapper .menu-middle a {
+	color: #555555;
+}
+
+
+.sidebar-wrapper .menu-middle a:hover {
+	color: #990000;
+}
+
+
+
+.sidebar-wrapper .menu-bottom {
+
+	width: 100%;
+
+	height: 55px;
+
+	background: url(https://static.loopia.se/inline/sb-bottom3.png) no-repeat;
+
+}
+
+
+
+.your_account {
+	margin: 2px 5px 4px 5px;
+	border: 3px #aaaaaa solid;
+	background-color: #ffffff;
+	padding: 10px;
+}
+
+table.account {
+	border-collapse: collapse;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+table.account tr, table.account tr td {
+	margin: 0px;
+	padding: 0px;
+}
+
+.red {
+	color: #cc0000;
+}
+
+.sidebar-wrapper .menu-middle ul li.selected {
+	background: url(https://static.loopia.se/inline/arrow4-down.gif) no-repeat;
+	background-position: left 8px;
+	border-right: 1px #dddddd solid;
+}
+
+.sidebar-wrapper .menu-middle ul li.selected ul.subcat {
+	padding: 1px 0px 0px 0px;
+	margin-bottom: 2px;
+}
+
+.sidebar-wrapper .menu-middle ul li.selected ul.subcat li.subcat {
+	margin: 0px;
+	background: url(https://static.loopia.se/inline/arrow4-sub.gif) no-repeat;
+	background-position: 0px 7px;
+	border-bottom: none;
+}
+
+.sidebar-wrapper a.inactive, a.inactive:hover {
+	color: #aaaaaa;
+}
+
+.sidebar-wrapper .menu-middle-video {
+    background-color: #F4F4F4 !important;
+    padding: 0 !important;
+    width: 255px !important;
+}
+
+.all {
+
+	float: left;
+
+	overflow: hidden;
+
+	width: 100%;
+
+	height: 300px;
+
+	background: #ffffff url(https://static.loopia.se/inline/packages.png) no-repeat;
+
+}
+
+
+
+.c-wrapper {
+	float: left;
+	overflow: hidden;
+	padding: 8px 8px 0px 3px;
+	width: 583px;
+}
+
+
+
+.c-wrapper .contents {
+
+	float: left;
+
+/*	width: 100%; */
+
+	width: 554px;
+
+	padding-left: 17px;
+
+}
+
+
+
+.c-wrapper .contents h1 a {
+
+	color: #dba71a;
+
+}
+
+
+
+.c-wrapper a {
+
+	color: #bf8d07;
+
+	border-bottom: 1px #efe1ba solid;
+
+	font-weight: bold;
+
+}
+
+.c-wrapper  a:hover {
+
+	color: #dd0000;
+
+	border-bottom: 1px #dd0000 solid;
+
+}
+
+.c-wrapper .contents ul {
+	margin: 3px 0px 13px 10px;
+	padding: 0px;
+}
+
+.c-wrapper .contents ul li {
+	list-style: none;
+	padding: 2px 0px 2px 12px;
+	background: url(https://static.loopia.se/inline/arrow.png) no-repeat;
+	background-position: top left;
+}
+
+.c-wrapper .contents ul li.subli {
+	list-style: none;
+	padding: 2px 0px 2px 12px;
+	margin-left: 15px;
+	background: url(https://static.loopia.se/inline/arrow.png) no-repeat;
+	background-position: top left;
+}
+
+.c-wrapper .contents ul li p {
+	padding: 2px 0px 3px 0px;
+	margin: 0px;
+}
+
+.c-wrapper .contents .col-wrapper {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.c-wrapper .contents .col-wrapper .col1 {
+	float: left;
+	width: 267px;
+	margin-right: 15px;
+}
+
+.c-wrapper .contents .col-wrapper .col2 {
+	float: left;
+	width: 267px;
+}
+
+.c-wrapper .contents .col-wrapper .col1 .caption, .c-wrapper .contents .col-wrapper .col2 .caption {
+	width: 257px;
+	height: 30px;
+	background-color: #dba71a;
+	color: #ffffff;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.footer-wrapper {
+	padding-left: 53px;
+}
+
+.footer-wrapper .footer {
+	float: left;
+	width: 846px;
+	height: 163px;
+	background: url(https://static.loopia.se/inline/footer-10.png) no-repeat;
+}
+
+.footer-wrapper .footer .footer-col {
+	width: 200px;
+	float: left;
+	padding: 48px 0px 0px 100px;
+}
+
+.footer-wrapper .footer .footer-col ul {
+	list-style: none;
+	margin: 5px 20px 0px 0px;
+	padding: 0px;
+}
+
+.footer-wrapper .footer .footer-col ul li {
+	margin: 0px;
+	padding: 2px 0px 2px 10px;
+	background: url("https://static.loopia.se/inline/arrow.png") no-repeat;
+	background-position: left center;
+	border-bottom: 1px #bbbbbb solid;
+}
+
+.lists {
+	border-collapse: collapse;
+	/* border: 1px #bbbbbb solid; */
+	margin: 5px 0px 15px 0px;
+	padding: 0px;
+}
+
+.lists tr {
+	margin: 0px;
+	padding: 0px;
+}
+
+.lists tr td {
+	margin: 0px;
+	padding: 2px 5px 2px 5px;
+	border: 1px #bbbbbb solid;
+}
+
+.lists tr td.top {
+	background-color: #f8f8f8;
+	font-weight: bold;
+	margin: 0px;
+	padding: 5px;
+	border: 1px #bbbbbb solid;
+	color: #777777;
+}
+
+.lists tr td.tinted {
+	background: #f0efef url(https://static.loopia.se/inline/login-bg2.png) repeat-x;
+	margin: 0px;
+	padding: 2px 5px 2px 5px;
+	border: 1px #bbbbbb solid;
+}
+
+.lists tr td.tinted2 {
+	background-color: #f8f8f8;
+	margin: 0px;
+	padding: 2px 5px 2px 5px;
+	border: 1px #bbbbbb solid;
+}
+
+.lists tr td.img {
+	margin: 0px 3px 0px 0px;
+	padding: 0px;
+	border: none;
+}
+
+.lists tr td.img2 {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+.p-wrapper1 {
+	float: left;
+	margin: 0px 4px 15px 0px;
+	width: 206px;
+}
+
+.p-wrapper2 {
+	float: left;
+	margin: 0px 4px 15px 0px;
+	width: 83px;
+}
+
+.p-wrapper3 {
+	float: left;
+	margin: 0px 0px 15px 0px;
+	width: 83px;
+}
+
+.lists1 {
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+}
+
+.lists1 tr {
+	margin: 0px;
+	padding: 0px;
+}
+
+.lists1 tr td {
+	margin: 0px;
+	padding: 2px 5px 0px 5px;
+	height: 23px;
+}
+
+.lists1 tr td a {
+	margin: 0px;
+	padding: 0px;
+}
+
+.lists1 tr td.tint1 {
+	padding: 2px 5px 0px 5px;
+/*	background: #f0efef url(https://static.loopia.se/inline/login-bg2.png) repeat-x; */
+	background-color: #f0efef;
+}
+
+.lists1 tr td.tint2 {
+	padding: 2px 5px 0px 5px;
+/*	background: #ffebb5 url(https://static.loopia.se/inline/login-bg3.png) repeat-x; */
+	background-color: #ffebb5;
+}
+
+.lists1 tr td.tint3 {
+	padding: 2px 5px 0px 5px;
+/*	background: #e8e9ff url(https://static.loopia.se/inline/login-bg4.png) repeat-x; */
+	background-color: #e8e9ff;
+}
+
+.p-wrapper {
+	float: left;
+}
+
+.p-fp-big {
+	float: left;
+	width: 170px;
+}
+
+.p-pp-big {
+	float: left;
+	width: 170px;
+	margin-right: 4px;
+}
+
+.p-grey {
+	float: left;
+	width: 206px;
+	height: 150px;
+	margin-right: 4px;
+	padding-bottom: 4px;
+	background: #ffffff url(https://static.loopia.se/inline/hosting-table-grey.png) no-repeat;
+}
+
+.p-fp-big-tintr {
+	float: left;
+	width: 160px;
+	padding: 2px 5px 2px 5px;
+	background: #f0efef url(https://static.loopia.se/inline/login-bg2.png) repeat-x;
+}
+
+.p-fp-big-notintr {
+	float: left;
+	width: 160px;
+	padding: 0px 5px 0px 5px;
+}
+
+.p-fp-small-tintr {
+	float: left;
+	width: 73px;
+	padding: 2px 5px 2px 5px;
+	background: #f0efef url(https://static.loopia.se/inline/login-bg2.png) repeat-x;
+}
+
+.p-small-tint {
+	float: left;
+	width: 73px;
+	padding: 2px 5px 2px 5px;
+	margin-right: 4px;
+	background: #f0efef url(https://static.loopia.se/inline/login-bg2.png) repeat-x;
+}
+
+.p-small-tintr {
+	float: left;
+	width: 73px;
+	padding: 2px 5px 2px 5px;
+	background: #f0efef url(https://static.loopia.se/inline/login-bg2.png) repeat-x;
+}
+
+.p-small-notint {
+	float: left;
+	width: 73px;
+	padding: 0px 5px 0px 5px;
+	margin-right: 4px;
+}
+
+.p-small-notintr {
+	float: left;
+	width: 73px;
+	padding: 0px 5px 0px 5px;
+}
+
+.p-big-notint {
+	float: left;
+	width: 160px;
+	padding: 0px 5px 0px 5px;
+	margin-right: 4px;
+}
+
+.p-big-tint {
+	float: left;
+	width: 160px;
+	padding: 2px 5px 2px 5px;
+	margin-right: 4px;
+	background: #f0efef url(https://static.loopia.se/inline/login-bg2.png) repeat-x;
+}
+
+.p-grey-tint {
+	float: left;
+	width: 196px;
+	padding: 2px 5px 2px 5px;
+	margin-right: 4px;
+	background: #f0efef url(https://static.loopia.se/inline/login-bg2.png) repeat-x;
+}
+
+.p-grey-notint {
+	float: left;
+	width: 196px;
+	padding: 0px 5px 0px 5px;
+	margin-right: 4px;
+}
+
+.pic-right {
+	padding: 2px;
+	margin: 0px 0px 0px 10px;
+	border: 1px #bbbbbb solid;
+	float: right;
+}
+
+.code {
+	width: 512px;
+	padding: 20px;
+	border: 1px #cccccc solid;
+	background-color: #fafafa;
+	font: 11px "Courier New", Courier, monospace;
+	color: #666666;
+	margin: 15px 0px 15px 0px;
+}
+
+.input-wrapper {
+	width: 100%;
+	padding: 5px 0px 3px 0px;
+	border-bottom: 3px #dba71a solid;
+	margin-bottom: 15px;
+
+}
+
+.input-wrapper .input {
+	width: 512px;
+	padding: 20px;
+	border: 1px #888888 solid;
+	background: #f4f4f4 url(https://static.loopia.se/inline/login-bg3.png) repeat-x;
+	overflow: hidden;
+}
+
+.input-wrapper .invoice {
+
+	width: 512px;
+
+	padding: 20px;
+
+	border: 1px #888888 solid;
+
+	/* background: #f4f4f4 url(https://static.loopia.se/inline/login-bg3.png) repeat-x; */
+
+	background-color: #ffffe3;
+
+}
+
+
+
+.text {
+
+	border: 1px #888888 solid;
+
+	background: #ffffff url(https://static.loopia.se/inline/login-bg4.png) repeat-x;
+
+	color: #333333;
+
+}
+
+
+
+.input-wrapper .input .separator, .input-wrapper .invoice .separator {
+
+	overflow: hidden;
+
+	padding: 5px 0px 10px 0px;
+
+	margin-bottom: 5px;
+
+	border-bottom: 1px #cccccc solid;
+
+}
+
+
+
+.input-wrapper .error {
+	width: 434px;
+	padding: 7px 20px 7px 98px;
+	border: 1px #680000 solid;
+	background: #b70000 url(https://static.loopia.se/inline/error.png) no-repeat;
+	background-position: left center;
+	color: #ffffff;
+	font-weight: normal;
+}
+
+.input-wrapper .info {
+	width: 434px;
+	padding: 7px 20px 7px 98px;
+	border: 1px #680000 solid;
+	background: #ffdc50 url(https://static.loopia.se/inline/info-big.png) no-repeat;
+	background-position: left center;
+	color: #333333;
+	font-weight: normal;
+}
+
+.input-wrapper .info h2 {
+	color: #444444;
+	padding-top: 15px;
+}
+
+.input-wrapper .info p a {
+	border-bottom: 1px #dba71a solid;
+}
+
+.input-wrapper .error h2 {
+	color: #ffffff;
+	padding-top: 15px;
+}
+
+.input-wrapper .error ul li {
+	list-style: none;
+	padding: 2px 0px 2px 12px;
+	background: url(https://static.loopia.se/inline/white-arrow.gif) no-repeat;
+	background-position: center left;
+}
+
+
+
+.input-wrapper .success {
+
+	width: 434px;
+
+	padding: 7px 20px 7px 98px;
+
+	border: 1px #045300 solid;
+
+	background: #269820 url(https://static.loopia.se/inline/success.png) no-repeat;
+
+	background-position: left center;
+
+	color: #ffffff;
+
+	font-weight: normal;
+
+}
+
+
+
+.input-wrapper .success h2 {
+
+	color: #ffffff;
+
+	padding-top: 15px;
+
+}
+
+
+
+.skicka {
+	margin-top: 5px;
+	padding: 5px;
+	border: 1px #888888 solid;
+	background: #d7d7d7 url(https://static.loopia.se/inline/table-top2.png) repeat-x;
+	color: #666666;
+}
+
+.skicka-yes {
+	margin-top: 5px;
+	padding: 7px 10px;
+	border: 1px #888888 solid;
+	background: #d7d7d7 url(https://static.loopia.se/inline/table-top5.png) repeat-x;
+	color: #000000;
+}
+
+.skicka-no {
+	margin-top: 5px;
+	padding: 7px 10px;
+	border: 1px #888888 solid;
+	background: #d7d7d7 url(https://static.loopia.se/inline/table-top4.png) repeat-x;
+	color: #000000;
+}
+
+
+
+
+table.tiny, table.sub {
+
+	border-collapse: collapse;
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+
+
+table.tiny tr, table.sub tr {
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+
+
+table.tiny tr td {
+
+	margin: 0px;
+
+	padding: 0px;
+
+}
+
+
+
+table.sub tr td {
+
+	margin: 0px;
+
+	padding: 3px 0px 3px 0px;
+
+}
+
+table.tiny tr td.status {
+	width: 50px;
+}
+
+table.tiny tr td.status .search {
+	background: url(https://static.loopia.se/inline/ajax-loader3.gif) no-repeat;
+	background-position: center left;
+}
+
+table.tiny tr td.status .active {
+	background: url(https://static.loopia.se/inline/tick-gif.gif) no-repeat;
+	background-position: center left;
+}
+
+table.tiny tr td.status .inactive {
+	background: url(https://static.loopia.se/inline/cross-gif.gif) no-repeat;
+	background-position: center left;
+}
+
+table.tiny tr td.status .ferror {
+	background: url(https://static.loopia.se/inline/ferror-gif.gif) no-repeat;
+	background-position: center left;
+}
+
+table.tiny tr td.fee {
+	width: 60px;
+	padding-right: 20px;
+	text-align: right;
+}
+
+table.tiny tr td.fee-serb {
+	width: 115px;
+	padding-right: 20px;
+	text-align: right;
+}
+
+table.tiny tr td.domain {
+	width: 330px;
+	padding-right: 0px;
+}
+
+table.tiny tr td.domain-serb {
+	width: 270px;
+	padding-right: 0px;
+}
+
+table.tiny tr td.fee .search, table.tiny tr td.domain .search {
+	color: #999999;
+}
+
+table.tiny tr td.fee .active, table.tiny tr td.domain .active, table.tiny tr td.domain .inactive {
+	color: #222222;
+}
+
+table.tiny tr td.checkit {
+	text-align: center;
+}
+
+table.tiny tr td.checkit input.search, table.tiny tr td.checkit input.inactive {
+	display: none;
+}
+
+table.tiny tr td.checkit input.active {
+	display: inline;
+}
+
+
+
+.nav {
+
+	padding: 15px 0px 0px 0px;
+
+	width: 100%;
+
+	height: 20px;
+
+}
+
+
+
+.nav .navigate {
+
+	float: left;
+
+	width: 330px;
+
+	height: 22px;
+
+}
+
+
+
+.nav .order {
+
+	text-align: right;
+
+	padding-right: 10px;
+
+}
+
+
+
+.small-cap {
+
+	width: 261px;
+
+	height: 60px;
+
+}
+
+
+
+.small-cap h3 {
+	margin: 0px;
+	padding: 23px 0px 0px 0px;
+}
+
+.spec3-wrapper {
+	padding: 10px 0px 15px 0px;
+}
+
+table.spec3 {
+	border-collapse: collapse;
+}
+
+table.spec3 tr td.top {
+	border-top: 1px #aab677 solid;
+ 	border-bottom: 1px #aab677 solid;
+	background: #eef8c7 url(https://static.loopia.se/inline/login-bg6.png) repeat-x;
+	background-color: #eef8c7;
+	font-weight: bold;
+	color: #566542;
+}
+
+table.spec3 tr td {
+	padding: 5px;
+	margin: 0px;
+	height: 19px;
+}
+
+table.spec3 tr td.notint {
+	border-top: 1px #aab677 solid;
+	border-bottom: 1px #aab677 solid;
+}
+
+table.spec3 tr td.notint a, table.spec3 tr td.notint a:hover {
+	border-bottom: none;
+}
+
+table.spec3 tr td.tinted {
+	border-top: 1px #aab677 solid;
+	border-bottom: 1px #aab677 solid;
+	background-color: #fbffec;
+}
+
+table.spec3 tr td.tinted a, table.spec3 tr td.tinted a:hover {
+	border-bottom: none;
+}
+
+ol.sup {
+	color: #777777;
+	margin: 5px 0px 15px 40px;
+	padding: 0px;
+}
+
+
+
+ol.sup li {
+
+	padding: 2px 0px 2px 0px;
+
+}
+
+
+
+.highlight {
+
+	color: #dd0000;
+
+	font-weight: bold;
+
+}
+
+
+
+.img {
+
+	padding: 4px;
+
+	border: 1px #888888 solid;
+
+}
+
+
+
+.textactive {
+	color: #000000;
+	background: #f7ffd8 url(https://static.loopia.se/inline/login-bg5.png) repeat-x;
+	border: 1px #5d614e solid;
+
+}
+
+
+
+.texterror {
+	background: #ffecec url(https://static.loopia.se/inline/login-bg7.png) repeat-x;
+	border: 1px #dd0000 solid;
+	color: #000000;
+
+}
+
+
+
+.strong {
+
+	font-weight: bold;
+
+	color: #555555;
+
+}
+
+.dom-separator {
+	float: left;
+	width: 100%;
+	padding-bottom: 8px;
+	margin-top: 8px;
+	border-bottom: 1px #cccccc solid;
+}
+
+.dom-wrapper {
+	float: left;
+	padding-bottom: 2px;
+}
+
+.dom-status-headline {
+	float: left;
+	width: 50px;
+	font-weight: bold;
+	color: #777777;
+	padding-bottom: 10px;
+}
+
+.dom-status-search {
+	float: left;
+	height: 19px;
+	width: 50px;
+	background: url(https://static.loopia.se/inline/ajax-loader2.gif) no-repeat;
+	background-position: center left;
+}
+
+.dom-status-active {
+	float: left;
+	height: 19px;
+	width: 50px;
+	background: url(https://static.loopia.se/inline/tick-gif.gif) no-repeat;
+	background-position: center left;
+}
+
+.dom-status-inactive {
+	float: left;
+	height: 19px;
+	width: 50px;
+	background: url(https://static.loopia.se/inline/cross-gif.gif) no-repeat;
+	background-position: center left;
+}
+
+.dom-fee-headline {
+	float: left;
+	width: 60px;
+	font-weight: bold;
+	color: #777777;
+	text-align: right;
+	padding: 0px 20px 10px 0px;
+}
+
+.dom-fee-search {
+	float: left;
+	width: 60px;
+	text-align: right;
+	padding-right: 20px;
+	color: #999999;
+}
+
+.dom-fee-active, .dom-fee-inactive {
+	float: left;
+	width: 60px;
+	text-align: right;
+	padding-right: 20px;
+}
+
+.dom-domain-headline {
+	float: left;
+	width: 330px;
+	font-weight: bold;
+	color: #777777;
+	padding-bottom: 10px;
+}
+
+.dom-domain-search {
+	float: left;
+	width: 330px;
+	color: #999999;
+}
+
+.dom-domain-active, .dom-domain-inactive {
+	float: left;
+	width: 330px;
+}
+
+.dom-order {
+	float: left;
+	width: 52px;
+	text-align: center;
+	height: 21px;
+}
+
+.dom-order-headline {
+	float: left;
+	width: 52px;
+	font-weight: bold;
+	color: #777777;
+	padding-bottom: 10px;
+}
+
+.dom-order-search, .dom-order-inactive {
+	display: none;
+}
+
+.dom-order-active {
+	display: inline;
+}
+
+.dlist-left {
+	float: left;
+	text-align: right;
+	padding-right: 15px;
+	width: 40px;
+	font-weight: bold;
+	color: #666666;
+}
+
+.dlist-right {
+	float: left;
+}
+
+a.campaign {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+a.campaign:hover {
+	color: #ffe270;
+	border-bottom: 1px #ffe270 solid;
+}
+
+.toc_list {
+	height: 110px;
+}
+
+.green {
+	color: #769a4c;
+}
+
+.start-col1 {
+	float: left;
+	width: 121px;
+}
+
+.start-col2 {
+	float: left;
+	width: 70px;
+	text-align: right;
+}
+
+.start-col3 {
+	float: left;
+	width: 70px;
+	text-align: right;
+}
+
+.start-col2-long {
+	float: left;
+	width: 140px;
+	text-align: right;
+}
+
+.shead {
+	display: block;
+	font-size: 11px;
+	color: #888888;
+	padding: 1px 0px 3px 0px;
+}
+
+.supexpand {
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	padding: 10px 0px 15px 0px;
+}
+
+.supexpand a {
+	display: block;
+	float: left;
+	border: 1px #888888 solid;
+	background-color: rgb(244, 244, 244);
+	font-weight: normal;
+	font-size: 11px;
+	color: #000000;
+	padding: 2px 5px;
+	width: 249px;
+	background: rgb(244, 244, 244) url(https://static.loopia.se/inline/support-expand.png) no-repeat;
+	background-position: 240px center;
+}
+
+.supexpand a:hover {
+	background-color: #888888;
+	color: #ffffff;
+	border: 1px #888888 solid;
+}
+
+.sidebar_search_div {
+	padding: 6px 0px 8px 10px;
+}
+
+.sidebar_search_div .text {
+	border: 1px #888888 solid;
+	font-size: 14px;
+	padding: 5px;
+	width: 185px;
+	margin: 0px;
+	background: #ffffff url(https://static.loopia.se/inline/kdb-puls.gif) repeat-x;
+}
+
+.sidebar_search_div .textactive {
+	border: 1px #888888 solid;
+	font-size: 14px;
+	padding: 5px;
+	width: 185px;
+	margin: 0px;
+	background: #ffffff;
+}
+
+.collapse {
+	padding-left: 19px;
+	background: transparent url(https://static.loopia.se/inline/collapse.gif) no-repeat;
+	background-position: 0px 1px;
+}
+
+.expand {
+	padding-left: 19px;
+	background: transparent url(https://static.loopia.se/inline/expand.gif) no-repeat;
+	background-position: 0px 1px;
+}
+
+.no-exp {
+	padding-left: 19px;
+}
+
+.list-row {
+	float: left;
+	width: 100%;
+	height: 18px;
+	overflow: hidden;
+	padding: 4px 0px 4px 0px;
+	border-top: 1px #dddddd solid;
+}
+
+.list-norow {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+	padding: 4px 0px 4px 0px;
+}
+
+.list-row a, .list-norow a {
+	color: #555555;
+	font-weight: normal;
+	border-bottom: none;
+}
+
+.list-row a:hover, .list-norow a:hover {
+	color: #880000;
+	border-bottom: none;
+}
+
+.list-row .count, .list-norow .count {
+	float: left;
+	width: 40px;
+	padding-right: 10px;
+	text-align: right;
+}
+
+.list-row .support-subj, .list-norow .support-subj {
+	float: left;
+	width: 460px;
+}
+
+.list-row p, .list-norow p {
+	padding: 2px 0px;
+	margin: 0px;
+}
+
+.list-row .support_info, .list-norow .support_info {
+	float: left;
+	padding-left: 70px;
+	background: url(https://static.loopia.se/inline/support-icon.png) no-repeat;
+	background-position: 12px center;
+	min-height: 30px;
+	width: 430px;
+	color: #666666;
+}
+
+.list-row .support_info a, .list-norow .support_info a {
+	border-bottom: 1px solid rgb(239, 225, 186);
+	color: rgb(191, 141, 7);
+	font-weight: bold;
+}
+
+.list-row .support_info a:hover, .list-norow .support_info a:hover {
+	border-bottom: 1px solid rgb(221, 0, 0);
+	color: rgb(221, 0, 0);
+}
+
+.sub-wrapper {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+	background: #ffffff url(https://static.loopia.se/inline/sublist-top2.png) no-repeat;
+	margin-bottom: 5px;
+
+}
+
+.sub-wrapper-bottom {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+	background: transparent url(https://static.loopia.se/inline/sublist-bottom2.png) no-repeat;
+	background-position: left bottom;
+	padding: 7px 0px;
+}
+
+.border-bottom{
+	border-bottom: 3px solid #DBA71A;
+}
+
+a.black-link{
+	color: #000;
+}
+
+a:hover.black-link{
+	color: #DD0000;
+}
+
+.follow-p{
+	border-bottom:0 none !important;
+	display:inline-block;
+	padding:0 !important;
+}
+
+.follow{
+	width: 47px;
+	display: block;
+	float: left;
+	font-size: 10px;
+	padding: 43px 5px 0 5px;
+	background: no-repeat 7px 0;
+	border-bottom: 0 !important;
+	text-decoration: 0;
+	text-align: center;
+}
+
+.followBlog{
+	background-image: url(/loopiaweb/images/follow/blogg.png);
+	margin-left: 4px;
+}
+
+.followTwitter{
+	background-image: url(/loopiaweb/images/follow/twitter.png);
+}
+
+.followFacebook{
+	background-image: url(/loopiaweb/images/follow/facebook.png);
+}
+
+.followDrift{
+	background-image: url(/loopiaweb/images/follow/driftbloggen.png);
+}
+
+a.listPopupLink {
+	color: #555555;
+	font-weight: normal;
+}
+
+
+a:hover.listPopupLink {
+	color: #990000;
+	font-weight: normal;
+}
+
+		.wrapper-field-title{
+				float: left;
+				width: 120px;
+				color: #555555;
+			}
+		.wrapper-status-content{
+				float: left;
+			}
+		.directly-above-wrapper{
+				margin-bottom: 10px;
+			}
+
+		.wrapper-info-text{
+			color: #666666;
+			}
+
+		.asterix{
+			color: #888;
+			font-style: italic;
+			}
+
+		.clear{
+			clear: both;
+			}
+
+		.diode{
+			float: left;
+			padding-left: 40px;
+			padding-right: 10px;
+			width: 200px;
+			background-position: 21px 3px;
+			background-repeat: no-repeat;
+
+			}
+
+		.d-green{background-image: url(steg2_typ-filer/diode-green.png);}
+		.d-grey{background-image: url(steg2_typ-filer/diode-grey.png);}
+		.d-yellow{background-image: url(steg2_typ-filer/diode-yellow.png);}
+		.d-red{background-image: url(steg2_typ-filer/diode-red.png);}
+
+		.transf-domain-status{
+			float: left;
+			padding-right: 10px;
+			}
+
+		a.pdf-link{
+			padding: 4px 10px 4px 24px;
+			background: url(https://www.loopia.se/inline/icon-pdf.gif) 0 2px no-repeat;
+			border-bottom: none;
+			color: #555555;
+			font-weight: normal;
+			}
+
+		a:hover.pdf-link{
+			border-bottom: none;
+			color: #880000;
+			font-weight: normal;
+			}
+
+		.select-transfer{
+			float:left;
+			padding-right:16px;
+			text-align:right;
+			width:25px;
+			}
+
+		.domainlong3{
+			float:left;
+			width:255px;
+			margin-right: 10px;
+			}
+
+		.transfer-domain-info{
+			float: left;
+			width: 155px;
+			/*text-align: right;*/
+			}
+		.transfer-list-domain{
+			width: 200px;
+			float: left;
+			padding-left: 19px;
+			}
+
+
+
+			.orderform-box-image {
+				float: left;
+				width: 150px;
+				clear: left;
+				margin-bottom: 25px;
+			}
+
+			.orderform-service-header {
+				 float: left;
+				 width: 350px;
+				 margin-bottom: 6px;
+			}
+
+			.orderform-service-label {
+				 font-size: 18px;
+				 color: #666666;
+				 width: auto;
+				 float: none;
+			}
+
+			.orderform-service-list {
+				 width: 170px;
+				 float: left;
+				 *margin-bottom: 35px;
+			}
+
+			.orderform-service-list-item {
+				 background: url("https://static.loopia.se/inline/about-gif.gif") no-repeat 7px 4px ;
+				 padding-left: 20px;
+			}
+
+			.orderform-service-sublist-item {
+				 padding-left: 20px;
+				 font-style: italic;
+			}
+
+.sidebar-date{
+	font-size: 11px;
+	line-height: 15px;
+	margin: 0px 4px 1px 0;
+	color: #888 !important;
+	font-style: italic !important;
+}
+.link-to-blog{
+	background:transparent url(https://reseller.loopia.se/inline/arrow_grey.gif) no-repeat scroll left 3px;
+	padding-left:11px;
+	margin-left: 7px;
+}
+
+.app-link-div{
+	 width: 230px; display: inline-block;
+	}
+.app-link-div a{
+	 border: 0;
+	}
+.app-link{
+	width: 100px; display: block; float: left;
+	}
+.app-link-img{
+	float:right;
+	}
+
+#popout-from-right-col{
+	width: 105px;
+	position: absolute;
+	z-index: 0;
+	margin-left: 907px;
+	*margin-left: 8px; /*With love to IE 6 and 7*/
+	margin-right: auto;
+	}
+
+.share-box{
+	padding-top: 10px;
+	}
+
+.share-box-icons a:hover, .share-box-icons a{
+	border: 0;
+	}
+
+.share-box-icons{
+	float: left;
+	padding: 7px 7px 7px 0;
+	}
+
+.share-box-text{
+	font-style: italic;
+	padding: 10px 10px 7px 0;
+	}
+
+#hideBackground{
+	background: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1200px;
+		 filter:alpha(opacity=60); /* F�r IE */
+		 -moz-opacity:0.6; /* Standard CSS - FF, Opera, Safari */
+		 -khtml-opacity: 0.6; /* Gammal Mozilla, ex Netscape */
+		 opacity: 0.6; /* Gammal Safari */
+	display: none;
+		z-index: 1000;
+}
+
+#video-view{
+	width: 607px;
+	height: 544px;
+	background: url(https://static.loopia.se/loopiaweb/images/video-on-start-page/video_box.png) ;
+	z-index: 1500;
+	position:absolute;
+/*	top: 100px;
+	left: 70px;*/
+	padding: 35px 60px 30px 90px;
+	display: none;
+	margin-left: -550px;
+	margin-top: -100px;
+	/*margin-right: 100px;*/
+}
+
+.video-view-content{
+	width: 90%;
+}
+
+.video-view-content a{
+	border-bottom: 1px solid #EFE1BA;
+    color: #BF8D07;
+    font-weight: bold;
+}
+
+.video-view-content a:hover{
+	border-bottom: 1px solid #dd0000;
+    color: #dd0000;
+    font-weight: bold;
+}
+
+.video-view-closeBtn{
+	width: 30px;
+	height: 30px;
+	float: right;
+}
+
+.menu-middle-video{
+	padding:0 !important;
+	background-color: #F4F4F4 !important;
+	width: 255px  !important;
+}
+
+a.btnHref{
+	background: url("https://static.loopia.se/inline/table-top2.png") repeat-x scroll 0 0 #D7D7D7;
+    border: 1px solid #888888 !important;
+    color: #666666;
+    margin: 5px 0;
+    padding: 5px;
+	font: 12px Arial,Helvetica,sans-serif;
+	display: inline-block;
+
+	}
+
+.tablebottom{
+	background: #EEF8C7;
+	background-image: none;
+	border-bottom: 1px solid #AAB677;
+    border-top: 1px solid #AAB677;
+	}
+
+#facebook-like-box{
+		background-color: #FFF; margin-left: 10px;
+		}
+
+a.link-btn, a.link-btn:hover{
+    font-weight: normal;
+	color: #666666;
+	padding: 5px 8px;
+	display: inline-block;
+	border: 1px solid #888888;
+}
+
+.credit-card-logos{
+    background: url(https://static.loopia.se/loopiaweb/images/order/credit_cards.png) no-repeat;
+    width: 170px;
+    height: 27px;
+    float: left;
+    margin: -3px 0 0 10px;
+}
+
+.credit-card-logos-rs{
+    background: url(https://static.loopia.se/loopiaweb/images/order/credit_cards_rs.png) no-repeat;
+    width: 170px;
+    height: 27px;
+    float: left;
+    margin: -3px 0 0 10px;
+}
+
+.float-left{
+    float: left;
+}
+
+.support-icon{
+	width: 106px;
+	height: 132px;
+	float: left;
+	margin: 2px 15px;
+	}
+#support-icon-email{ background: url(https://static.loopia.se/loopiaweb/images/support_icons/support_email.png) no-repeat 0 -15px; }
+#support-icon-dns{ background: url(https://static.loopia.se/loopiaweb/images/support_icons/support_dns.png) no-repeat 0 -15px; }
+#support-icon-ftp{ background: url(https://static.loopia.se/loopiaweb/images/support_icons/support_ftp.png) no-repeat 0 -15px; }
+#support-icon-economy{ background: url(https://static.loopia.se/loopiaweb/images/support_icons/support_economy.png) no-repeat 0 -15px; }
+#support-icon-development{ background: url(https://static.loopia.se/loopiaweb/images/support_icons/support_development.png) no-repeat 0 -15px; }
+#support-icon-cz{ background: url(https://static.loopia.se/loopiaweb/images/support_icons/support_cz.png) no-repeat 0 -15px; }
+#support-icon-oci{ background: url(https://static.loopia.se/loopiaweb/images/support_icons/support_oci.png) no-repeat 0 -15px; }
+#support-icon-misc{ background: url(https://static.loopia.se/loopiaweb/images/support_icons/support_misc.png) no-repeat 0 -15px; }
+
+.support-icon a,.support-icon a:hover {
+	width: 100%;
+	height: 100%;
+	display: block;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	padding: 3px 0;
+	border: 0;
+	font-size: 11px;
+	}
+
+.support-icon a span{
+	width: 100%;
+	height: 19px;
+	background: #bcbcba;
+	display: block;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding: 3px 0;
+	border: 0;
+	margin-top: 93px;
+	}
+.inline-block{
+	display: inline-block;
+	}
+
+.login-sub-div{
+	width: 275px;
+	}
+
+.to_pay {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.gray {
+    color: #888;
+}
+
+.img-right {
+	float: right;
+	margin: 0 0 10px 10px;
+}
+
+.package-start-info{
+ color: #666666;
+ width: 160px;
+ font: 11px/15px Arial,Helvetica,sans-serif;
+ font-style:oblique;
+ padding: 7px 0 9px 0;
+}
+
+.package-start-box{
+ float: left;
+ padding: 1.9%;
+ margin: 13px 1% 1% 1%;
+ width: 27%;
+ border: 1px solid #dad794;
+ border-radius: 7px;
+ -moz-border-radius: 7px;
+ background: #fffde6;
+}
+
+.package-start-box h2{
+ font-size: 18px;
+ padding-top: 0;
+}
+
+.package-start-box ul li{
+ padding-left: 13px;
+}
+
+.package-start-box ul{
+ margin-top: 0px;
+}
+
+.package-start-order{
+ padding-top: 8px;
+ height: 36px;
+}
+
+.package-start-moreinfo{
+ float: right;
+ padding-top:15px;
+ *position:relative;
+ *top: -34px;
+}
+
+.package-start-moreinfo-o365{
+ float: right;
+ *position:relative;
+ *top: -34px;
+}
+
+.package-start-moreinfo-o365 a, .package-start-moreinfo-o365 a:hover{
+ border: 0;
+}
+
+#package-start-images{
+ width: 580px;
+ height: 129px;
+ margin-top: 145px;
+ position: absolute;
+ z-index: 20;
+ margin-left: 5px;
+ *margin-left: -558px;
+}
+
+#packages-start {
+ margin-left: 10px;
+}
+
+.package-start-order-btn {
+ *padding: 0 .25em;
+ *overflow:visible;
+ *width: 0;
+ *float:left;
+}
+
+.skicka-start-ie7 {
+ *width: 70px;
+}
+
+.col1of4{
+	width: 40%;
+}
+
+.col2-4of4{
+	width: 20%;
+}
+
+.box_right{
+    float: right;
+    margin: 5px 0 10px 20px;
+}
+
+.qoute{
+    color: #aaa;
+    font-size: 14px;
+    font-style:italic;
+}

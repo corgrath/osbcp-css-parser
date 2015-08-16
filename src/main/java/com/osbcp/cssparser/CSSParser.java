@@ -44,7 +44,7 @@ public final class CSSParser {
 
 		List<Rule> rules = new ArrayList<Rule>();
 
-		if (css == null || css.trim().length() == 0) {
+		if (css == null || css.trim().isEmpty()) {
 			return rules;
 		}
 
@@ -321,7 +321,7 @@ public final class CSSParser {
 
 		} else if (Chars.COMMA.equals(c)) {
 
-			if (selectorName.trim().length() == 0) {
+			if (selectorName.trim().isEmpty()) {
 				throw new IncorrectFormatException(ErrorCode.FOUND_COLON_WHEN_READING_SELECTOR_NAME, "Found an ',' in a selector name without any actual name before it.");
 			}
 
