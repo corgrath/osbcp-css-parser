@@ -1,16 +1,31 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.osbcp</groupId>
 	<artifactId>cssparser</artifactId>
-	<version>1.0.1</version>
+	<version>1.6-SNAPSHOT</version>
 
 	<properties>
 		<java.version>7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<S3_BUCKET_NAME>alanhay-maven-repository</S3_BUCKET_NAME>
+		<github.user>raisercostin</github.user>
+		<github.repo>osbcp-css-parser</github.repo>
+		<bintray.user>raisercostin</bintray.user>
+		<bintray.repo>maven</bintray.repo>
+		<bintray.package>osbcp-css-parser</bintray.package>
 	</properties>
 
+	<scm>
+		<connection>scm:git:https://github.com/${github.user}/${github.repo}.git</connection>
+		<developerConnection>scm:git:https://github.com/${github.user}/${github.repo}.git</developerConnection>
+		<url>https://github.com/${github.user}/${github.repo}</url>
+		<tag>HEAD</tag>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>bintray</id>
+			<url>https://api.bintray.com/maven/${bintray.user}/${bintray.repo}/${bintray.package}</url>
+		</repository>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -41,75 +56,46 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<useReleaseProfile>false</useReleaseProfile>
+					<releaseProfiles>release</releaseProfiles>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
 		</plugins>
-		<extensions>
-			<extension>
-				<groupId>org.springframework.build.aws</groupId>
-				<artifactId>org.springframework.build.aws.maven</artifactId>
-				<version>3.0.0.RELEASE</version>
-			</extension>
-		</extensions>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>maven-s3-release-repo</id>
-			<name>S3 Release Repository</name>
-			<url>s3://S3_BUCKET_NAME/release</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>maven-s3-snapshot-repo</id>
-			<name>S3 Snapshot Repository</name>
-			<url>s3://${S3_BUCKET_NAME}/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>maven-s3-release-repo</id>
-			<name>S3 Release Repository</name>
-			<url>s3://${S3_BUCKET_NAME}/release</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>maven-s3-snapshot-repo</id>
-			<name>S3 Snapshot Repository</name>
-			<url>s3://${S3_BUCKET_NAME}/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
-	<distributionManagement>
-		<repository>
-			<id>maven-s3-release-repo</id>
-			<name>S3 Release Repository</name>
-			<url>s3://${S3_BUCKET_NAME}/release</url>
-		</repository>
-		<snapshotRepository>
-			<id>maven-s3-snapshot-repo</id>
-			<name>S3 Snapshot Repository</name>
-			<url>s3://${S3_BUCKET_NAME}/snapshot</url>
-		</snapshotRepository>
-	</distributionManagement>
+	<profiles>
+		<profile>
+		<id>release</id>
+		<build>
+			<plugins>
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</build>
+		</profile>
+	</profiles>
 </project>

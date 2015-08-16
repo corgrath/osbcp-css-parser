@@ -53,6 +53,13 @@ JavaDoc
 
 http://dl.dropbox.com/u/8183146/persistent/projects/java_osbcp_css_parser/javadoc/index.html
 
+Release to bintray
+========================================
+
+```
+mvn release:prepare release:perform -Prelease -DskipTests=true -Darguments="-DskipTests=true -Prelease"
+```
+
 Reporting bugs
 ========================================
 
