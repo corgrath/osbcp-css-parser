@@ -1,3 +1,15 @@
+This project is abandoned
+========================================
+I am sorry to say but this project is abandoned, and I stopped maintaining it back in 2012, as my focus has shifted from Java.
+
+However, there might be an active fork with improvements. Please check the fork tree below.
+https://github.com/corgrath/osbcp-css-parser/network
+
+Again, I am so sorry but I highly appreciate all the stars and forks this project has gotten :-)
+
+-- Christoffer
+
+
 OSBCP CSS Parser
 ========================================
 
