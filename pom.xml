@@ -3,7 +3,27 @@
 	<groupId>com.osbcp</groupId>
 	<artifactId>cssparser</artifactId>
 	<version>1.6-SNAPSHOT</version>
-
+	<name>Java CSS Parser</name>
+	<description>A simple CSS parser in Java.</description>
+	<url>https://github.com/corgrath/osbcp-css-parser</url>
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Christoffer Pettersson</name>
+			<organizationUrl>http://indieauth.christoffer.me</organizationUrl>
+		</developer>
+		<developer>
+			<name>Costin Grigore</name>
+			<email>raisercostin@gmail.com</email>
+			<organization>brainlight</organization>
+			<organizationUrl>http://raisercostin.org</organizationUrl>
+		</developer>
+	</developers>
 	<properties>
 		<java.version>7</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
