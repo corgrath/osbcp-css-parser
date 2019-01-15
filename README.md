@@ -51,7 +51,7 @@ Or go into details:
 	
 	}
 ```	
-Please view the JavaDoc for more informaton.
+Please view the JavaDoc for more information.
 	
 	
 Download
